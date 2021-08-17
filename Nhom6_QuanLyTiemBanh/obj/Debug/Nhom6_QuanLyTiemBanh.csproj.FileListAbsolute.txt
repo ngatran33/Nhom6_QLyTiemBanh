@@ -1,0 +1,9 @@
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.exe.config
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.exe
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.pdb
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csprojAssemblyReference.cache
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.Properties.Resources.resources
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csproj.GenerateResource.cache
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csproj.CoreCompileInputs.cache
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.exe
+D:\HOCTAP\laptrinhWindows\Nhom6_QuanLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.pdb
