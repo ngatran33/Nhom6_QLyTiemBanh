@@ -16,5 +16,27 @@ namespace Nhom6_QuanLyTiemBanh
         {
             InitializeComponent();
         }
+        private void AddForm(Form f)
+        {
+            pnlHD.Controls.Clear();
+            f.TopLevel = false;
+            f.AutoScroll = true;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            pnlHD.Controls.Add(f);
+            f.Show();
+        }
+
+        private void mnuHDN_Click(object sender, EventArgs e)
+        {
+            HoaDonNhap fm = new HoaDonNhap();
+            AddForm(fm);
+        }
+
+        private void mnuHDB_Click(object sender, EventArgs e)
+        {
+            HoaDonBan fm = new HoaDonBan();
+            AddForm(fm);
+        }
     }
 }
