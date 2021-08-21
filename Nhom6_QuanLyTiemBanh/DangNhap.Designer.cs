@@ -32,14 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dkbtnDangNhap = new System.Windows.Forms.Button();
-            this.dnTxtTenDn = new System.Windows.Forms.TextBox();
-            this.dnTxtMatKhau = new System.Windows.Forms.TextBox();
-            this.dnbtnThoat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.dnbtnThoat = new System.Windows.Forms.Button();
+            this.dnTxtMatKhau = new System.Windows.Forms.TextBox();
+            this.dnTxtTenDn = new System.Windows.Forms.TextBox();
+            this.dkbtnDangNhap = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,64 +84,15 @@
             this.panel1.Size = new System.Drawing.Size(518, 368);
             this.panel1.TabIndex = 2;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(189, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Đăng Nhập";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tên Đăng Nhập:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Mật khẩu:";
-            // 
-            // dkbtnDangNhap
-            // 
-            this.dkbtnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dkbtnDangNhap.Location = new System.Drawing.Point(79, 288);
-            this.dkbtnDangNhap.Name = "dkbtnDangNhap";
-            this.dkbtnDangNhap.Size = new System.Drawing.Size(152, 42);
-            this.dkbtnDangNhap.TabIndex = 3;
-            this.dkbtnDangNhap.Text = "Đăng Nhập";
-            this.dkbtnDangNhap.UseVisualStyleBackColor = true;
-            this.dkbtnDangNhap.Click += new System.EventHandler(this.dkbtnDangNhap_Click);
-            // 
-            // dnTxtTenDn
-            // 
-            this.dnTxtTenDn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dnTxtTenDn.Location = new System.Drawing.Point(203, 95);
-            this.dnTxtTenDn.Name = "dnTxtTenDn";
-            this.dnTxtTenDn.Size = new System.Drawing.Size(271, 27);
-            this.dnTxtTenDn.TabIndex = 4;
-            // 
-            // dnTxtMatKhau
-            // 
-            this.dnTxtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dnTxtMatKhau.Location = new System.Drawing.Point(203, 181);
-            this.dnTxtMatKhau.Name = "dnTxtMatKhau";
-            this.dnTxtMatKhau.PasswordChar = '*';
-            this.dnTxtMatKhau.Size = new System.Drawing.Size(271, 27);
-            this.dnTxtMatKhau.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(200, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Nhập lại.";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dnbtnThoat
             // 
@@ -154,15 +105,66 @@
             this.dnbtnThoat.UseVisualStyleBackColor = true;
             this.dnbtnThoat.Click += new System.EventHandler(this.dnbtnThoat_Click);
             // 
-            // label5
+            // dnTxtMatKhau
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Nhập lại.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.dnTxtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dnTxtMatKhau.Location = new System.Drawing.Point(203, 181);
+            this.dnTxtMatKhau.Name = "dnTxtMatKhau";
+            this.dnTxtMatKhau.PasswordChar = '*';
+            this.dnTxtMatKhau.Size = new System.Drawing.Size(271, 27);
+            this.dnTxtMatKhau.TabIndex = 5;
+            this.dnTxtMatKhau.Text = "123456";
+            // 
+            // dnTxtTenDn
+            // 
+            this.dnTxtTenDn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dnTxtTenDn.Location = new System.Drawing.Point(203, 95);
+            this.dnTxtTenDn.Name = "dnTxtTenDn";
+            this.dnTxtTenDn.Size = new System.Drawing.Size(271, 27);
+            this.dnTxtTenDn.TabIndex = 4;
+            this.dnTxtTenDn.Text = "nga";
+            // 
+            // dkbtnDangNhap
+            // 
+            this.dkbtnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dkbtnDangNhap.Location = new System.Drawing.Point(79, 288);
+            this.dkbtnDangNhap.Name = "dkbtnDangNhap";
+            this.dkbtnDangNhap.Size = new System.Drawing.Size(152, 42);
+            this.dkbtnDangNhap.TabIndex = 3;
+            this.dkbtnDangNhap.Text = "Đăng Nhập";
+            this.dkbtnDangNhap.UseVisualStyleBackColor = true;
+            this.dkbtnDangNhap.Click += new System.EventHandler(this.dkbtnDangNhap_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(36, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Mật khẩu:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tên Đăng Nhập:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(189, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Đăng Nhập";
             // 
             // DangNhap
             // 
