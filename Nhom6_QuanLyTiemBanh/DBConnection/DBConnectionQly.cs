@@ -12,12 +12,12 @@ namespace Nhom6_QuanLyTiemBanh.DBConnection
     {
         public SqlConnection getConnect()
         {
-            // String conString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=HCG_NHOMSO9;Integrated Security=True";
+            //String conString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
             String conString = @"Data Source=DESKTOP-QMBOBJ0\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
-        public DataTable getTable(String sql)
+        public DataTable GetTable(String sql)
         {
             SqlConnection conn = getConnect();
             DataTable table = new DataTable();
@@ -25,7 +25,7 @@ namespace Nhom6_QuanLyTiemBanh.DBConnection
             adapter.Fill(table);
             return table;
         }
-        public void ExceteNonQuery(string sql)
+        public void ExecuteNonQuery(string sql)
         {
             SqlConnection conn = getConnect();
             conn.Open();

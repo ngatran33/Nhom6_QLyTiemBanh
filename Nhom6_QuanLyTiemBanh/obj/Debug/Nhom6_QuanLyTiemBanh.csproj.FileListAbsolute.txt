@@ -20,3 +20,17 @@ D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTi
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.pdb
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.HoaDonNhap.resources
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QLyHoaDon.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.exe.config
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.exe
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\Nhom6_QuanLyTiemBanh.pdb
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csprojAssemblyReference.cache
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.DangNhap.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.HoaDonNhap.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.Properties.Resources.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QLyHoaDon.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.TaiKhoan.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.TrangChu.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csproj.GenerateResource.cache
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csproj.CoreCompileInputs.cache
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.exe
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.pdb

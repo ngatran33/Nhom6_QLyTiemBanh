@@ -14,20 +14,20 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         public DataTable getNCC()
         {
             string sql = "SELECT * FROM NhaCungCap";
-            DataTable table = dbConn.getTable(sql);
+            DataTable table = dbConn.GetTable(sql);
             return table;
         }
         public DataTable getNV()
         {
             string sql = "SELECT * FROM TaiKhoan";
-            DataTable table = dbConn.getTable(sql);
+            DataTable table = dbConn.GetTable(sql);
             return table;
         }
 
         public DataTable getSanPham()
         {
             String sql = "SELECT * FROM SanPham";
-            DataTable table = dbConn.getTable(sql);
+            DataTable table = dbConn.GetTable(sql);
             return table;
         }
     }

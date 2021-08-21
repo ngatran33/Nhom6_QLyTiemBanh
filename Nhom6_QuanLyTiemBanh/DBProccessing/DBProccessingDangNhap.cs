@@ -14,7 +14,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         public bool checkTaiKhoan(string tenDN, String MK)
         {
             String sql = "Select * from TaiKhoan where TenDangNhap= '" + tenDN + "' and MatKhau='" + MK + "'";
-            DataTable table = dbconn.getTable(sql);
+            DataTable table = dbconn.GetTable(sql);
             if (table.Rows.Count > 0)
             {
                 return true;
@@ -24,7 +24,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         public string getMaTk(string tenDN, String MK)
         {
             String sql = "Select * from TaiKhoan where TenDangNhap= '" + tenDN + "' and MatKhau='" + MK + "'";
-            DataTable table = dbconn.getTable(sql);
+            DataTable table = dbconn.GetTable(sql);
             return table.Rows[0].ItemArray[0].ToString();
             
         }
