@@ -52,6 +52,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachHoaDoncs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachHoaDoncs.Designer.cs">
+      <DependentUpon>DanhSachHoaDoncs.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnection\DBConnectionQly.cs" />
     <Compile Include="DBProccessing\DBProccessingDangNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingHoaDonBan.cs" />
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachHoaDoncs.resx">
+      <DependentUpon>DanhSachHoaDoncs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonNhap.resx">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>

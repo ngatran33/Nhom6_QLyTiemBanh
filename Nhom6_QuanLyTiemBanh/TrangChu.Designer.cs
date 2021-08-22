@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDx = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnKH = new System.Windows.Forms.Button();
@@ -48,10 +49,15 @@
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panelTrangChu = new System.Windows.Forms.Panel();
-            this.btnDx = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -122,9 +128,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(490, 44);
+            this.label1.Location = new System.Drawing.Point(513, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 36);
             this.label1.TabIndex = 1;
@@ -141,13 +148,15 @@
             this.panel1.Controls.Add(this.btnSanPham);
             this.panel1.Controls.Add(this.btnTaiKhoan);
             this.panel1.Controls.Add(this.btnTrangChu);
-            this.panel1.Location = new System.Drawing.Point(0, 101);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 840);
+            this.panel1.Size = new System.Drawing.Size(260, 689);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -157,10 +166,23 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // btnDx
+            // 
+            this.btnDx.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDx.Location = new System.Drawing.Point(30, 628);
+            this.btnDx.Name = "btnDx";
+            this.btnDx.Size = new System.Drawing.Size(200, 40);
+            this.btnDx.TabIndex = 6;
+            this.btnDx.Text = "Đăng xuất";
+            this.btnDx.UseVisualStyleBackColor = true;
+            this.btnDx.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(30, 683);
+            this.btnThoat.Location = new System.Drawing.Point(30, 568);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(200, 40);
             this.btnThoat.TabIndex = 6;
@@ -170,8 +192,9 @@
             // 
             // btnHoaDon
             // 
+            this.btnHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.Location = new System.Drawing.Point(30, 610);
+            this.btnHoaDon.Location = new System.Drawing.Point(30, 508);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(200, 40);
             this.btnHoaDon.TabIndex = 5;
@@ -181,8 +204,9 @@
             // 
             // btnKH
             // 
+            this.btnKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKH.Location = new System.Drawing.Point(30, 537);
+            this.btnKH.Location = new System.Drawing.Point(30, 448);
             this.btnKH.Name = "btnKH";
             this.btnKH.Size = new System.Drawing.Size(200, 40);
             this.btnKH.TabIndex = 4;
@@ -192,8 +216,9 @@
             // 
             // btnNCC
             // 
+            this.btnNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNCC.Location = new System.Drawing.Point(30, 464);
+            this.btnNCC.Location = new System.Drawing.Point(30, 388);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Size = new System.Drawing.Size(200, 40);
             this.btnNCC.TabIndex = 3;
@@ -203,8 +228,9 @@
             // 
             // btnSanPham
             // 
+            this.btnSanPham.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSanPham.Location = new System.Drawing.Point(30, 391);
+            this.btnSanPham.Location = new System.Drawing.Point(30, 328);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Size = new System.Drawing.Size(200, 40);
             this.btnSanPham.TabIndex = 2;
@@ -214,8 +240,9 @@
             // 
             // btnTaiKhoan
             // 
+            this.btnTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiKhoan.Location = new System.Drawing.Point(30, 318);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(30, 268);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(200, 40);
             this.btnTaiKhoan.TabIndex = 1;
@@ -225,8 +252,9 @@
             // 
             // btnTrangChu
             // 
+            this.btnTrangChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangChu.Location = new System.Drawing.Point(30, 245);
+            this.btnTrangChu.Location = new System.Drawing.Point(30, 208);
             this.btnTrangChu.Name = "btnTrangChu";
             this.btnTrangChu.Size = new System.Drawing.Size(200, 40);
             this.btnTrangChu.TabIndex = 0;
@@ -235,30 +263,59 @@
             // 
             // panelTrangChu
             // 
-            this.panelTrangChu.Location = new System.Drawing.Point(262, 101);
+            this.panelTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTrangChu.Location = new System.Drawing.Point(269, 3);
             this.panelTrangChu.Name = "panelTrangChu";
-            this.panelTrangChu.Size = new System.Drawing.Size(1080, 840);
+            this.panelTrangChu.Size = new System.Drawing.Size(1074, 689);
             this.panelTrangChu.TabIndex = 3;
             // 
-            // btnDx
+            // tableLayoutPanel1
             // 
-            this.btnDx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDx.Location = new System.Drawing.Point(30, 756);
-            this.btnDx.Name = "btnDx";
-            this.btnDx.Size = new System.Drawing.Size(200, 40);
-            this.btnDx.TabIndex = 6;
-            this.btnDx.Text = "Đăng xuất";
-            this.btnDx.UseVisualStyleBackColor = true;
-            this.btnDx.Click += new System.EventHandler(this.btnThoat_Click);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1352, 771);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1346, 64);
+            this.panel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelTrangChu, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1346, 695);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 943);
-            this.Controls.Add(this.panelTrangChu);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1352, 802);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TrangChu";
@@ -269,6 +326,10 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +357,8 @@
         private System.Windows.Forms.Button btnTrangChu;
         private System.Windows.Forms.Panel panelTrangChu;
         private System.Windows.Forms.Button btnDx;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

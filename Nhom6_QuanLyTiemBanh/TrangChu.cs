@@ -108,5 +108,6 @@ namespace Nhom6_QuanLyTiemBanh
             QLyHoaDon fm = new QLyHoaDon();
             AddForm(fm);
         }
+
     }
 }

@@ -43,36 +43,39 @@
             this.mnuHDB});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1062, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1062, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnuHDN
             // 
+            this.mnuHDN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuHDN.Name = "mnuHDN";
-            this.mnuHDN.Size = new System.Drawing.Size(121, 24);
+            this.mnuHDN.Size = new System.Drawing.Size(137, 27);
             this.mnuHDN.Text = "Hóa Đơn Nhập";
             this.mnuHDN.Click += new System.EventHandler(this.mnuHDN_Click);
             // 
             // mnuHDB
             // 
+            this.mnuHDB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuHDB.Name = "mnuHDB";
-            this.mnuHDB.Size = new System.Drawing.Size(110, 24);
+            this.mnuHDB.Size = new System.Drawing.Size(124, 27);
             this.mnuHDB.Text = "Hóa Đơn Bán";
             this.mnuHDB.Click += new System.EventHandler(this.mnuHDB_Click);
             // 
             // pnlHD
             // 
-            this.pnlHD.Location = new System.Drawing.Point(2, 25);
+            this.pnlHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHD.Location = new System.Drawing.Point(0, 31);
             this.pnlHD.Name = "pnlHD";
-            this.pnlHD.Size = new System.Drawing.Size(1046, 756);
+            this.pnlHD.Size = new System.Drawing.Size(1062, 707);
             this.pnlHD.TabIndex = 1;
             // 
             // QLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 793);
+            this.ClientSize = new System.Drawing.Size(1062, 738);
             this.Controls.Add(this.pnlHD);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

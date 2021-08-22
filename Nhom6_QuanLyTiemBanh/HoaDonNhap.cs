@@ -136,7 +136,53 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     dgvDsachSP.Rows.RemoveAt(index);
                     index = -1;
+                    cleartxt();
                 }
+            }
+        }
+
+        private void btnLapHD_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {//(int sp, int masp, int sl, int gia, int tong)
+                    obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(cbbNV.SelectedValue.ToString()), dtpNgayLap.Value);
+                    txtSPN.Text = obj.getspn();
+                    if (dgvDsachSP.Rows.Count > 0)
+                    {
+                        foreach(DataGridViewRow row in dgvDsachSP.Rows)
+                        {
+                            int sopn =int.Parse(txtSPN.Text);
+                            int masp =int.Parse(row.Cells[0].Value.ToString());
+                            int sl =int.Parse(row.Cells[2].Value.ToString());
+                            int dg =int.Parse(row.Cells[3].Value.ToString());
+                            int thanhtien =int.Parse(row.Cells[4].Value.ToString());
+                            obj.insertctHDN(sopn, masp, sl, dg, thanhtien);
+                            obj.upDateSl(masp, sl);
+                        }
+                        MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hay chọn hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    txtSPN.Clear();
+                    dgvDsachSP.Rows.Clear();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+        }
+
+        private void btnHuyHD_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn nhập", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dgvDsachSP.Rows.Clear();
             }
         }
     }

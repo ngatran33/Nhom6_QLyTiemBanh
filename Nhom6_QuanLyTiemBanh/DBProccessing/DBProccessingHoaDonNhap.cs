@@ -30,5 +30,28 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             DataTable table = dbConn.GetTable(sql);
             return table;
         }
+        public void insertHDN(int mancc, int maTk, DateTime ngay)
+        {
+            String sql="INSERT INTO HoaDonNhap VALUES (" + mancc + ", " + maTk + ", '" + ngay + "')";
+            dbConn.ExecuteNonQuery(sql);
+        }
+
+        public void insertctHDN(int sp, int masp, int sl, int gia, int tong)
+        {
+            String sql = "INSERT INTO ChiTietHoaDonNhap VALUES (" + sp + ", " + masp+ ", " + sl + ", " + gia + ", " + tong + ")";
+            dbConn.ExecuteNonQuery(sql);
+        }
+
+        public string getspn()
+        {
+            string sql = "SELECT * FROM HoaDonNhap ORDER BY SoPN DESC";
+            DataTable table = dbConn.GetTable(sql);
+            return table.Rows[0][0].ToString();
+        }
+        public void upDateSl(int masp, int sl)
+        {
+            string sql = "UPDATE SanPHam Set Slco=SLco+ " + sl + " WHERE MaSP=" + masp;
+            dbConn.ExecuteNonQuery(sql);
+        }
     }
 }
