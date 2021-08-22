@@ -43,7 +43,7 @@
             this.mnuHDB});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(969, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1062, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,19 +65,21 @@
             // 
             this.pnlHD.Location = new System.Drawing.Point(2, 25);
             this.pnlHD.Name = "pnlHD";
-            this.pnlHD.Size = new System.Drawing.Size(967, 594);
+            this.pnlHD.Size = new System.Drawing.Size(1046, 756);
             this.pnlHD.TabIndex = 1;
             // 
             // QLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 620);
+            this.ClientSize = new System.Drawing.Size(1062, 793);
             this.Controls.Add(this.pnlHD);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "QLyHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLyHoaDon";
+            this.Load += new System.EventHandler(this.QLyHoaDon_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

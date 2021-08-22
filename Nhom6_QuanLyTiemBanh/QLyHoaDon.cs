@@ -38,5 +38,11 @@ namespace Nhom6_QuanLyTiemBanh
             HoaDonBan fm = new HoaDonBan();
             AddForm(fm);
         }
+
+        private void QLyHoaDon_Load(object sender, EventArgs e)
+        {
+            HoaDonNhap fm = new HoaDonNhap();
+            AddForm(fm);
+        }
     }
 }

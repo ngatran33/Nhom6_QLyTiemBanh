@@ -32,14 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuTrangChu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTTTk = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQlyNV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNCC = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKH = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHoaDon = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHDN = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHDban = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,6 +48,7 @@
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panelTrangChu = new System.Windows.Forms.Panel();
+            this.btnDx = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +68,7 @@
             this.mnuThoat});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1249, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1352, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,25 +80,10 @@
             // 
             // mnuTaiKhoan
             // 
-            this.mnuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTTTk,
-            this.mnuQlyNV});
             this.mnuTaiKhoan.Name = "mnuTaiKhoan";
             this.mnuTaiKhoan.Size = new System.Drawing.Size(96, 27);
             this.mnuTaiKhoan.Text = "Tài Khoản";
             this.mnuTaiKhoan.Click += new System.EventHandler(this.mnuTaiKhoan_Click);
-            // 
-            // mnuTTTk
-            // 
-            this.mnuTTTk.Name = "mnuTTTk";
-            this.mnuTTTk.Size = new System.Drawing.Size(226, 28);
-            this.mnuTTTk.Text = "Thông tin cá nhân";
-            // 
-            // mnuQlyNV
-            // 
-            this.mnuQlyNV.Name = "mnuQlyNV";
-            this.mnuQlyNV.Size = new System.Drawing.Size(226, 28);
-            this.mnuQlyNV.Text = "Quản lý nhân viên";
             // 
             // mnuSanPham
             // 
@@ -126,25 +108,10 @@
             // 
             // mnuHoaDon
             // 
-            this.mnuHoaDon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHDN,
-            this.mnuHDban});
             this.mnuHoaDon.Name = "mnuHoaDon";
             this.mnuHoaDon.Size = new System.Drawing.Size(90, 27);
             this.mnuHoaDon.Text = "Hóa Đơn";
             this.mnuHoaDon.Click += new System.EventHandler(this.mnuHoaDon_Click);
-            // 
-            // mnuHDN
-            // 
-            this.mnuHDN.Name = "mnuHDN";
-            this.mnuHDN.Size = new System.Drawing.Size(216, 28);
-            this.mnuHDN.Text = "Hóa Đơn Nhập";
-            // 
-            // mnuHDban
-            // 
-            this.mnuHDban.Name = "mnuHDban";
-            this.mnuHDban.Size = new System.Drawing.Size(216, 28);
-            this.mnuHDban.Text = "Hóa Đơn Bán";
             // 
             // mnuThoat
             // 
@@ -166,6 +133,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnDx);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnHoaDon);
             this.panel1.Controls.Add(this.btnKH);
@@ -175,7 +143,7 @@
             this.panel1.Controls.Add(this.btnTrangChu);
             this.panel1.Location = new System.Drawing.Point(0, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 667);
+            this.panel1.Size = new System.Drawing.Size(262, 840);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -192,7 +160,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(30, 592);
+            this.btnThoat.Location = new System.Drawing.Point(30, 683);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(200, 40);
             this.btnThoat.TabIndex = 6;
@@ -203,7 +171,7 @@
             // btnHoaDon
             // 
             this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.Location = new System.Drawing.Point(30, 528);
+            this.btnHoaDon.Location = new System.Drawing.Point(30, 610);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(200, 40);
             this.btnHoaDon.TabIndex = 5;
@@ -214,7 +182,7 @@
             // btnKH
             // 
             this.btnKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKH.Location = new System.Drawing.Point(30, 464);
+            this.btnKH.Location = new System.Drawing.Point(30, 537);
             this.btnKH.Name = "btnKH";
             this.btnKH.Size = new System.Drawing.Size(200, 40);
             this.btnKH.TabIndex = 4;
@@ -225,7 +193,7 @@
             // btnNCC
             // 
             this.btnNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNCC.Location = new System.Drawing.Point(30, 400);
+            this.btnNCC.Location = new System.Drawing.Point(30, 464);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Size = new System.Drawing.Size(200, 40);
             this.btnNCC.TabIndex = 3;
@@ -236,7 +204,7 @@
             // btnSanPham
             // 
             this.btnSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSanPham.Location = new System.Drawing.Point(30, 336);
+            this.btnSanPham.Location = new System.Drawing.Point(30, 391);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Size = new System.Drawing.Size(200, 40);
             this.btnSanPham.TabIndex = 2;
@@ -247,7 +215,7 @@
             // btnTaiKhoan
             // 
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiKhoan.Location = new System.Drawing.Point(30, 272);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(30, 318);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(200, 40);
             this.btnTaiKhoan.TabIndex = 1;
@@ -258,7 +226,7 @@
             // btnTrangChu
             // 
             this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangChu.Location = new System.Drawing.Point(30, 208);
+            this.btnTrangChu.Location = new System.Drawing.Point(30, 245);
             this.btnTrangChu.Name = "btnTrangChu";
             this.btnTrangChu.Size = new System.Drawing.Size(200, 40);
             this.btnTrangChu.TabIndex = 0;
@@ -269,20 +237,32 @@
             // 
             this.panelTrangChu.Location = new System.Drawing.Point(262, 101);
             this.panelTrangChu.Name = "panelTrangChu";
-            this.panelTrangChu.Size = new System.Drawing.Size(987, 667);
+            this.panelTrangChu.Size = new System.Drawing.Size(1080, 840);
             this.panelTrangChu.TabIndex = 3;
+            // 
+            // btnDx
+            // 
+            this.btnDx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDx.Location = new System.Drawing.Point(30, 756);
+            this.btnDx.Name = "btnDx";
+            this.btnDx.Size = new System.Drawing.Size(200, 40);
+            this.btnDx.TabIndex = 6;
+            this.btnDx.Text = "Đăng xuất";
+            this.btnDx.UseVisualStyleBackColor = true;
+            this.btnDx.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 768);
+            this.ClientSize = new System.Drawing.Size(1352, 943);
             this.Controls.Add(this.panelTrangChu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TrangChu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrangChu";
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -299,14 +279,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuTrangChu;
         private System.Windows.Forms.ToolStripMenuItem mnuTaiKhoan;
-        private System.Windows.Forms.ToolStripMenuItem mnuTTTk;
-        private System.Windows.Forms.ToolStripMenuItem mnuQlyNV;
         private System.Windows.Forms.ToolStripMenuItem mnuSanPham;
         private System.Windows.Forms.ToolStripMenuItem mnuNCC;
         private System.Windows.Forms.ToolStripMenuItem mnuKH;
         private System.Windows.Forms.ToolStripMenuItem mnuHoaDon;
-        private System.Windows.Forms.ToolStripMenuItem mnuHDN;
-        private System.Windows.Forms.ToolStripMenuItem mnuHDban;
         private System.Windows.Forms.ToolStripMenuItem mnuThoat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -319,5 +295,6 @@
         private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnTrangChu;
         private System.Windows.Forms.Panel panelTrangChu;
+        private System.Windows.Forms.Button btnDx;
     }
 }
