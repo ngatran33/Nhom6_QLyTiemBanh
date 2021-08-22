@@ -150,6 +150,9 @@
     <EmbeddedResource Include="QLyHoaDon.resx">
       <DependentUpon>QLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLySanPham.resx">
+      <DependentUpon>QLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan.resx">
       <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
