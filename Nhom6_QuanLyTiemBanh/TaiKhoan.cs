@@ -91,7 +91,7 @@ namespace Nhom6_QuanLyTiemBanh
                 else
                     gt = "Nữ";
 
-                data.ThemTaiKhoan(txtMaTaiKhoan.Text, txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text,  txtDiaChi.Text, txtSoDienThoai.Text, gt);
+                data.ThemTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text,  txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 TaiKhoan_Load(sender, e);
                 ClearTextBox();
             }

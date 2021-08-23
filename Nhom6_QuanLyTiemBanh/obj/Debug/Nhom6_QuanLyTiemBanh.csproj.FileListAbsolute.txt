@@ -35,5 +35,8 @@ F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_Qu
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.exe
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.pdb
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.TaiKhoan.resources
-F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.DanhSachHoaDoncs.resources
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QLySanPham.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ChiTietHoaDonBan.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ChiTietHoaDonNhap.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.DanhSachHoaDon.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhanVien.resources

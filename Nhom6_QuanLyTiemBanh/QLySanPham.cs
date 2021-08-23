@@ -21,11 +21,18 @@ namespace Nhom6_QuanLyTiemBanh
         private void QLySanPham_Load(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = data.ShowSanPham();
+            cbbLoaiSP.DataSource = data.ShowLoaiSanPham();
+            cbbLoaiSP.DisplayMember = "TenLoaiSP";
+            cbbLoaiSP.ValueMember = "MaLoaiSP";
+
         }
 
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = data.ShowSanPham();
+            cbbLoaiSP.DataSource = data.ShowLoaiSanPham();
+            cbbLoaiSP.DisplayMember = "TenLoaiSP";
+            cbbLoaiSP.ValueMember = "MaLoaiSP";
         }
 
         private void ClearTextBox()
@@ -46,6 +53,7 @@ namespace Nhom6_QuanLyTiemBanh
                 txtTenSP.Text = dgvSanPham.Rows[row].Cells[1].Value.ToString();
                 txtSoLuongCo.Text = dgvSanPham.Rows[row].Cells[2].Value.ToString();
                 txtDonGia.Text = dgvSanPham.Rows[row].Cells[3].Value.ToString();
+                cbbLoaiSP.SelectedValue = dgvSanPham.Rows[row].Cells[4].Value.ToString();
             }
         }
 
@@ -68,8 +76,7 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-               
-                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text));
+                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()));
                 QLySanPham_Load(sender, e);
                 ClearTextBox();
             }
@@ -79,36 +86,39 @@ namespace Nhom6_QuanLyTiemBanh
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("duplicate key"))
-                    MessageBox.Show("Trùng mã sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
-            {
-                if (txtTenSP.Text == "")
+            {   
+                if (txtMaSP.Text == null)
                 {
-                    MessageBox.Show("Tên sản phẩm không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (txtTenSP.Text == "")
+                    {
+                        MessageBox.Show("Tên sản phẩm không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (int.Parse(txtSoLuongCo.Text) < 0)
+                    {
+                        MessageBox.Show("Số lượng có không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (double.Parse(txtDonGia.Text) <= 0)
+                    {
+                        MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()));
+                    QLySanPham_Load(sender, e);
+                    ClearTextBox();
                 }
-                if (int.Parse(txtSoLuongCo.Text) < 0)
+                else
                 {
-                    MessageBox.Show("Số lượng có không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (double.Parse(txtDonGia.Text) <= 0)
-                {
-                    MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text));
-                QLySanPham_Load(sender, e);
-                ClearTextBox();
+                    MessageBox.Show("Chọn sản phẩm cần sửa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
             }
             catch (FormatException ex)
             {
@@ -116,7 +126,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
             catch (Exception ex)
             {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,9 +134,69 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                data.XoaSanPham(int.Parse(txtMaSP.Text));
-                QLySanPham_Load(sender, e);
-                ClearTextBox();
+                if (txtMaSP.Text == null)
+                {
+                    data.XoaSanPham(int.Parse(txtMaSP.Text));
+                    QLySanPham_Load(sender, e);
+                    ClearTextBox();
+                }
+                else
+                {
+                    MessageBox.Show("Chọn sản phẩm cần xoá", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiemTheoMa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txtTimKiem.Text == null)
+                {
+                    MessageBox.Show("Nhập mã sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                if (data.checkMaSP(int.Parse(txtTimKiem.Text)))
+                {
+                    dgvSanPham.DataSource = data.TimKiemTheoMaSP(int.Parse(txtTimKiem.Text));
+                    ClearTextBox();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy mã sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiemTheoTen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTimKiem.Text == null)
+                {
+                    MessageBox.Show("Nhập tên sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (data.checkTenSP(txtTimKiem.Text))
+                {
+                    dgvSanPham.DataSource = data.TimKiemTheoTenSP(txtTimKiem.Text);
+                    ClearTextBox();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy tên sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {

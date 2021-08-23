@@ -20,15 +20,23 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             return table;
         }
 
-        public void ThemSanPham(String tenSP, int soLuongCo, double gia)
+        public DataTable ShowLoaiSanPham()
         {
-            String sql = "Insert into SanPham Values (N'" + tenSP + "', " + soLuongCo + ", " + gia + ")";
+            String sql = "Select * from LoaiSanPham";
+            DataTable table = new DataTable();
+            table = dataConn.GetTable(sql);
+            return table;
+        }
+
+        public void ThemSanPham(String tenSP, int soLuongCo, double gia, int maLoaiSP)
+        {
+            String sql = "Insert into SanPham Values (N'" + tenSP + "', " + soLuongCo + ", " + gia + ", " + maLoaiSP + ")";
             dataConn.ExecuteNonQuery(sql);
         }
 
-        public void SuaTaiKhoan(int maSP, String tenSP, int soLuongCo, double gia)
+        public void SuaTaiKhoan(int maSP, String tenSP, int soLuongCo, double gia, int maLoaiSP)
         {
-            String sql = "Update SanPham Set TenSp=N'" + tenSP + "', Slco=" + soLuongCo + ", Gia=" + gia + " where MaSP=" + maSP + "";
+            String sql = "Update SanPham Set TenSp=N'" + tenSP + "', Slco=" + soLuongCo + ", Gia=" + gia + ", MaLoaiSP=" + maLoaiSP + " where MaSP=" + maSP + "";
             dataConn.ExecuteNonQuery(sql);
         }
 
@@ -38,9 +46,35 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             dataConn.ExecuteNonQuery(sql);
         }
 
+        public DataTable TimKiemTheoMaSP(int maSP)
+        {
+            String sql = "Select * from SanPham where MaSP=" + maSP + "";
+            DataTable table = new DataTable();
+            table = dataConn.GetTable(sql);
+            return table;
+        }
+
+        public DataTable TimKiemTheoTenSP(String tenSP)
+        {
+            String sql = "Select * from SanPham where tenSP=N'" + tenSP + "'";
+            DataTable table = new DataTable();
+            table = dataConn.GetTable(sql);
+            return table;
+        }
+
         public bool checkMaSP(int maSP)
         {
             String sql = "Select * from SanPham where MaSP=" + maSP + "";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool checkTenSP(String tenSP)
+        {
+            String sql = "Select * from SanPham where TenSP=N'" + tenSP + "'";
             DataTable table = dataConn.GetTable(sql);
             if (table.Rows.Count > 0)
                 return true;
