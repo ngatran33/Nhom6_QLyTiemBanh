@@ -162,6 +162,9 @@ namespace Nhom6_QuanLyTiemBanh
                             obj.upDateSl(masp, sl);
                         }
                         MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ChiTietHoaDonNhap.sopn = int.Parse(txtSPN.Text);
+                        ChiTietHoaDonNhap fm = new ChiTietHoaDonNhap();
+                        fm.Show();
                     }
                     else
                     {

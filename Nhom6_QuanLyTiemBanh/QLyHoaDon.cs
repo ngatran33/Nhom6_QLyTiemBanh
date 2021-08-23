@@ -41,7 +41,13 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void QLyHoaDon_Load(object sender, EventArgs e)
         {
-            HoaDonNhap fm = new HoaDonNhap();
+            DanhSachHoaDon fm = new DanhSachHoaDon();
+            AddForm(fm);
+        }
+
+        private void danhSáchHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachHoaDon fm = new DanhSachHoaDon();
             AddForm(fm);
         }
     }

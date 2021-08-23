@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Nhom6_QuanLyTiemBanh
 {
-    public partial class DanhSachHoaDoncs : Form
+    public partial class DanhSachHoaDon : Form
     {
-        public DanhSachHoaDoncs()
+        public DanhSachHoaDon()
         {
             InitializeComponent();
         }

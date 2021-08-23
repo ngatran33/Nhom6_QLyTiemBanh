@@ -46,19 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhSachHoaDoncs.cs">
+    <Compile Include="DanhSachHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhSachHoaDoncs.Designer.cs">
-      <DependentUpon>DanhSachHoaDoncs.cs</DependentUpon>
+    <Compile Include="DanhSachHoaDon.Designer.cs">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection\DBConnectionQly.cs" />
+    <Compile Include="DBProccessing\DBProccessingCTNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingDangNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingHoaDonBan.cs" />
     <Compile Include="DBProccessing\DBProccessingHoaDonNhap.cs" />
@@ -129,11 +142,17 @@
     <Compile Include="TTCaNhan.Designer.cs">
       <DependentUpon>TTCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiTietHoaDonBan.resx">
+      <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietHoaDonNhap.resx">
+      <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhSachHoaDoncs.resx">
-      <DependentUpon>DanhSachHoaDoncs.cs</DependentUpon>
+    <EmbeddedResource Include="DanhSachHoaDon.resx">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonNhap.resx">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
