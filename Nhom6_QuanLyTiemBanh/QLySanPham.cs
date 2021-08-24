@@ -90,7 +90,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
             {   
@@ -117,7 +117,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Chọn sản phẩm cần sửa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chọn sản phẩm cần cập nhật", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } 
             }
             catch (FormatException ex)
@@ -160,11 +160,10 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Nhập mã sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
+                dgvSanPham.DataSource = data.TimKiemTheoMaSP(int.Parse(txtTimKiem.Text));
                 if (data.checkMaSP(int.Parse(txtTimKiem.Text)))
-                {
-                    dgvSanPham.DataSource = data.TimKiemTheoMaSP(int.Parse(txtTimKiem.Text));
-                    ClearTextBox();
+                {      
+                    txtTimKiem.Clear();
                 }
                 else
                 {
@@ -187,10 +186,10 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Nhập tên sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                dgvSanPham.DataSource = data.TimKiemTheoTenSP(txtTimKiem.Text);
                 if (data.checkTenSP(txtTimKiem.Text))
                 {
-                    dgvSanPham.DataSource = data.TimKiemTheoTenSP(txtTimKiem.Text);
-                    ClearTextBox();
+                    txtTimKiem.Clear();
                 }
                 else
                 {

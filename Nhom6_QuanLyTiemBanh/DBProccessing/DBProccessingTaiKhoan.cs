@@ -20,6 +20,14 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             return table;
         }
 
+        public DataTable ShowNhanVien()
+        {
+            String sql = "Select * from TaiKhoan where TinhTrang='" + true + "'";
+            DataTable table = new DataTable();
+            table = dataConn.GetTable(sql);
+            return table;
+        }
+
         public void ThemTaiKhoan(String tenDangNhap, String matKhau, Boolean tinhTrang, String hoTen, String diaChi, String soDT, String gioiTinh)
         {
             String sql = "Insert into TaiKhoan Values ('" + tenDangNhap + "', '" + matKhau + "', '" + tinhTrang + "', N'" + hoTen + "', N'" + diaChi + "', '" + soDT + "', N'" + gioiTinh + "')";
@@ -39,22 +47,53 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         }
         public DataTable TimKiemTheoMaTK(int maTK)
         {
-            String sql = "Select * from TaiKhoan where MaTk=" + maTK + "";
+            String sql = "Select * from TaiKhoan where MaTk=" + maTK + " and TinhTrang='" + true + "'";
             DataTable table = new DataTable();
             table = dataConn.GetTable(sql);
             return table;
         }
         public DataTable TimKiemTheoHoTen(String hoTen)
         {
-            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen+ "'";
+            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen+ "' and TinhTrang='" + true + "'";
             DataTable table = new DataTable();
             table = dataConn.GetTable(sql);
             return table;
         }
+        
 
         public bool checkMaTaiKhoan(int maTK)
         {
             String sql = "Select * from TaiKhoan where MaTk=" + maTK + "";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool checkHoTen(String hoTen)
+        {
+            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool checkMaTaiKhoanNhanVien(int maTK)
+        {
+            String sql = "Select * from TaiKhoan where MaTk=" + maTK + " and TinhTrang='" + true + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool checkHoTenNhanVien(String hoTen)
+        {
+            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen + "' and TinhTrang='" + true + "'";
             DataTable table = dataConn.GetTable(sql);
             if (table.Rows.Count > 0)
                 return true;

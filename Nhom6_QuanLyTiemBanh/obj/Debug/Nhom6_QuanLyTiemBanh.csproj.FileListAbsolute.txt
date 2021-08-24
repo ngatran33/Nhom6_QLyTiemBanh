@@ -50,3 +50,4 @@ F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_Qu
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhanVien.resources
 >>>>>>> 078acb890ef9ca08a41fc57c9bc9f363f13c60ca
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhanVien.resources
+F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.TTCaNhan.resources
