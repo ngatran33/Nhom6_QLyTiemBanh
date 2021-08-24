@@ -73,6 +73,7 @@
     <Compile Include="DBConnection\DBConnectionQly.cs" />
     <Compile Include="DBProccessing\DBProccessingCTNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingDangNhap.cs" />
+    <Compile Include="DBProccessing\DBProccessingDSHoaDon.cs" />
     <Compile Include="DBProccessing\DBProccessingHoaDonBan.cs" />
     <Compile Include="DBProccessing\DBProccessingHoaDonNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingKhachHang.cs" />

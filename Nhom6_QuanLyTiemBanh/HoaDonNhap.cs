@@ -162,6 +162,9 @@ namespace Nhom6_QuanLyTiemBanh
                             obj.upDateSl(masp, sl);
                         }
                         MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtSPN.Clear();
+                        dgvDsachSP.Rows.Clear();
+                        lblTongTien.Text = "0";
                         ChiTietHoaDonNhap.sopn = int.Parse(txtSPN.Text);
                         ChiTietHoaDonNhap fm = new ChiTietHoaDonNhap();
                         fm.Show();
@@ -170,8 +173,7 @@ namespace Nhom6_QuanLyTiemBanh
                     {
                         MessageBox.Show("Hay chọn hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    txtSPN.Clear();
-                    dgvDsachSP.Rows.Clear();
+                   
                 }
                 catch(Exception ex)
                 {

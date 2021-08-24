@@ -37,8 +37,6 @@ F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_Qu
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.TaiKhoan.resources
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QLySanPham.resources
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 =======
 >>>>>>> Stashed changes
 <<<<<<< HEAD
@@ -46,20 +44,9 @@ D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTi
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ChiTietHoaDonNhap.resources
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.DanhSachHoaDon.resources
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QLySanPham.resources
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ChiTietHoaDonBan.resources
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ChiTietHoaDonNhap.resources
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.DanhSachHoaDon.resources
 F:\LapTrinhWinDows_Ky6\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhanVien.resources
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 >>>>>>> 078acb890ef9ca08a41fc57c9bc9f363f13c60ca
->>>>>>> Stashed changes
-=======
->>>>>>> 078acb890ef9ca08a41fc57c9bc9f363f13c60ca
->>>>>>> Stashed changes
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhanVien.resources

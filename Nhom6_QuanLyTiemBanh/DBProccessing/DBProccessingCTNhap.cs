@@ -32,7 +32,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         public DataTable getSP(int sopn)
         {
             String sql = "SELECT s.MaSP, TenSP, GiaNhap, SoLuongNhap, TongTienNhap" +
-                " FROM HoaDonNhap h inner join SanPham s On s.MaSP=h.MaSP" +
+                " FROM ChiTietHoaDonNhap h inner join SanPham s On s.MaSP=h.MaSP" +
                 " WHERE SoPN=" + sopn;
             DataTable table = dbConn.GetTable(sql);
             return table;

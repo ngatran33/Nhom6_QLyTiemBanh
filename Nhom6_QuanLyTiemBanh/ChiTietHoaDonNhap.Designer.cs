@@ -50,10 +50,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvDsachHang = new System.Windows.Forms.DataGridView();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.dgvDsachHang = new System.Windows.Forms.DataGridView();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -307,6 +307,23 @@
             this.panel2.Size = new System.Drawing.Size(1034, 308);
             this.panel2.TabIndex = 1;
             // 
+            // dgvDsachHang
+            // 
+            this.dgvDsachHang.AllowUserToAddRows = false;
+            this.dgvDsachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvDsachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSP,
+            this.TenSP,
+            this.Gia,
+            this.SoLuongBan,
+            this.TongTien});
+            this.dgvDsachHang.Location = new System.Drawing.Point(3, 52);
+            this.dgvDsachHang.Name = "dgvDsachHang";
+            this.dgvDsachHang.RowTemplate.Height = 24;
+            this.dgvDsachHang.Size = new System.Drawing.Size(784, 215);
+            this.dgvDsachHang.TabIndex = 3;
+            // 
             // label20
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -340,45 +357,33 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Danh sách sản phẩm Nhập:";
             // 
-            // dgvDsachHang
-            // 
-            this.dgvDsachHang.AllowUserToAddRows = false;
-            this.dgvDsachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvDsachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSP,
-            this.TenSP,
-            this.Gia,
-            this.SoLuongBan,
-            this.TongTien});
-            this.dgvDsachHang.Location = new System.Drawing.Point(3, 52);
-            this.dgvDsachHang.Name = "dgvDsachHang";
-            this.dgvDsachHang.RowTemplate.Height = 24;
-            this.dgvDsachHang.Size = new System.Drawing.Size(784, 215);
-            this.dgvDsachHang.TabIndex = 3;
-            // 
             // MaSP
             // 
+            this.MaSP.DataPropertyName = "MaSP";
             this.MaSP.HeaderText = "Mã SP";
             this.MaSP.Name = "MaSP";
             // 
             // TenSP
             // 
+            this.TenSP.DataPropertyName = "TenSP";
             this.TenSP.HeaderText = "Tên SP";
             this.TenSP.Name = "TenSP";
             // 
             // Gia
             // 
+            this.Gia.DataPropertyName = "GiaNhap";
             this.Gia.HeaderText = "Đơn Giá";
             this.Gia.Name = "Gia";
             // 
             // SoLuongBan
             // 
+            this.SoLuongBan.DataPropertyName = "SoLuongNhap";
             this.SoLuongBan.HeaderText = "Số lượng";
             this.SoLuongBan.Name = "SoLuongBan";
             // 
             // TongTien
             // 
+            this.TongTien.DataPropertyName = "TongTienNhap";
             this.TongTien.HeaderText = "Thành tiền";
             this.TongTien.Name = "TongTien";
             // 
