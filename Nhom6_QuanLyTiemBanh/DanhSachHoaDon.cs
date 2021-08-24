@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nhom6_QuanLyTiemBanh.DBProccessing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,15 @@ namespace Nhom6_QuanLyTiemBanh
 {
     public partial class DanhSachHoaDon : Form
     {
+        DBProccessingDSHoaDon obj=new DBProccessingDSHoaDon();
         public DanhSachHoaDon()
         {
             InitializeComponent();
         }
 
-        
+        private void DanhSachHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
