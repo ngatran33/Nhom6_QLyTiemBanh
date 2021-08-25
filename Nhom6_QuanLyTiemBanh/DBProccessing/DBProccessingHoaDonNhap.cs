@@ -19,11 +19,11 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         }
         public DataTable getNV()
         {
-            string sql = "SELECT * FROM TaiKhoan";
+            string sql = "SELECT * FROM TaiKhoan where MaTk= "+ int.Parse(TrangChu.tt);
             DataTable table = dbConn.GetTable(sql);
             return table;
         }
-
+      
         public DataTable getSanPham()
         {
             String sql = "SELECT * FROM SanPham";

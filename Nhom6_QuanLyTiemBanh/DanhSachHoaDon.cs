@@ -60,7 +60,17 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnXemCTHDN_Click(object sender, EventArgs e)
         {
-            
+            if (dgv_hdn_row != -1)
+            {
+                ChiTietHoaDonNhap fm = new ChiTietHoaDonNhap();
+                ChiTietHoaDonNhap.sopn = int.Parse(dgvHDN.Rows[dgv_hdn_row].Cells[0].Value.ToString());
+                fm.Show();
+                dgv_hdn_row = -1;
+            }
+            else
+            {
+                MessageBox.Show("Bạn cần chọn hóa đơn nhập", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgv_hd_cellclick(object sender, DataGridViewCellEventArgs e)
@@ -90,6 +100,17 @@ namespace Nhom6_QuanLyTiemBanh
             else
             {
                 MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xóa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnXemCTHD_Click(object sender, EventArgs e)
+        {
+            if (dgv_hd_row != -1)
+            {
+                ChiTietHoaDonBan fm = new ChiTietHoaDonBan();
+                ChiTietHoaDonBan.mahd = int.Parse(dgvHoaDOn.Rows[dgv_hd_row].Cells[0].Value.ToString());
+                fm.Show();
+                dgv_hd_row = -1;
             }
         }
     }

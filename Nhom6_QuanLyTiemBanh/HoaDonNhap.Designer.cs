@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbbNV = new System.Windows.Forms.ComboBox();
             this.cbbNCC = new System.Windows.Forms.ComboBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtSPN = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsachSP)).BeginInit();
@@ -74,7 +74,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.cbbNV);
+            this.groupBox1.Controls.Add(this.txtNhanVien);
             this.groupBox1.Controls.Add(this.cbbNCC);
             this.groupBox1.Controls.Add(this.dtpNgayLap);
             this.groupBox1.Controls.Add(this.txtSPN);
@@ -89,16 +89,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu nhập";
-            // 
-            // cbbNV
-            // 
-            this.cbbNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbNV.FormattingEnabled = true;
-            this.cbbNV.Location = new System.Drawing.Point(133, 164);
-            this.cbbNV.Name = "cbbNV";
-            this.cbbNV.Size = new System.Drawing.Size(237, 28);
-            this.cbbNV.TabIndex = 7;
             // 
             // cbbNCC
             // 
@@ -430,6 +420,14 @@
             this.panel3.Size = new System.Drawing.Size(1022, 48);
             this.panel3.TabIndex = 4;
             // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Enabled = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(133, 159);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(237, 27);
+            this.txtNhanVien.TabIndex = 7;
+            // 
             // HoaDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -457,7 +455,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbbNV;
         private System.Windows.Forms.ComboBox cbbNCC;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.TextBox txtSPN;
@@ -490,5 +487,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtNhanVien;
     }
 }

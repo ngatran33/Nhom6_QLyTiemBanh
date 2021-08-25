@@ -25,9 +25,8 @@ namespace Nhom6_QuanLyTiemBanh
             cbbNCC.DataSource = obj.getNCC();
             cbbNCC.DisplayMember = "TenNCC";
             cbbNCC.ValueMember = "MaNCC";
-            cbbNV.DataSource = obj.getNV();
-            cbbNV.DisplayMember = "HoTen";
-            cbbNV.ValueMember = "MaTk";
+            DataTable table = obj.getNV();
+            txtNhanVien.Text = table.Rows[0][4].ToString();
             cbbSP.DataSource = obj.getSanPham();
             cbbSP.DisplayMember = "TenSP";
             cbbSP.ValueMember = "MaSP";
@@ -147,7 +146,7 @@ namespace Nhom6_QuanLyTiemBanh
             {
                 try
                 {//(int sp, int masp, int sl, int gia, int tong)
-                    obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(cbbNV.SelectedValue.ToString()), dtpNgayLap.Value);
+                    obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(TrangChu.tt), dtpNgayLap.Value);
                     txtSPN.Text = obj.getspn();
                     if (dgvDsachSP.Rows.Count > 0)
                     {
@@ -162,12 +161,12 @@ namespace Nhom6_QuanLyTiemBanh
                             obj.upDateSl(masp, sl);
                         }
                         MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtSPN.Clear();
                         dgvDsachSP.Rows.Clear();
                         lblTongTien.Text = "0";
                         ChiTietHoaDonNhap.sopn = int.Parse(txtSPN.Text);
                         ChiTietHoaDonNhap fm = new ChiTietHoaDonNhap();
                         fm.Show();
+                        txtSPN.Clear();
                     }
                     else
                     {

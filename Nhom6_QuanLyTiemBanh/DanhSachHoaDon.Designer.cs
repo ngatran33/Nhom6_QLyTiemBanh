@@ -43,14 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvHDN = new System.Windows.Forms.DataGridView();
-            this.dgvHoaDOn = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sopn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHoaDOn = new System.Windows.Forms.DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,6 +158,7 @@
             this.btnXemCTHD.TabIndex = 6;
             this.btnXemCTHD.Text = "Xem Chi Tiết Hóa Đơn Bán";
             this.btnXemCTHD.UseVisualStyleBackColor = true;
+            this.btnXemCTHD.Click += new System.EventHandler(this.btnXemCTHD_Click);
             // 
             // btnXemCTHDN
             // 
@@ -231,6 +232,33 @@
             this.dgvHDN.TabIndex = 1;
             this.dgvHDN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HDN_cellclick);
             // 
+            // sopn
+            // 
+            this.sopn.DataPropertyName = "SoPN";
+            this.sopn.HeaderText = "Số phiếu";
+            this.sopn.Name = "sopn";
+            this.sopn.Width = 70;
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã NCC";
+            this.MaNCC.Name = "MaNCC";
+            this.MaNCC.Width = 70;
+            // 
+            // MaTk
+            // 
+            this.MaTk.DataPropertyName = "MaTk";
+            this.MaTk.HeaderText = "Mã TK";
+            this.MaTk.Name = "MaTk";
+            this.MaTk.Width = 70;
+            // 
+            // NgayNhap
+            // 
+            this.NgayNhap.DataPropertyName = "NgayNhap";
+            this.NgayNhap.HeaderText = "Ngày Nhập";
+            this.NgayNhap.Name = "NgayNhap";
+            // 
             // dgvHoaDOn
             // 
             this.dgvHoaDOn.AllowUserToAddRows = false;
@@ -264,33 +292,6 @@
             this.NgayLap.DataPropertyName = "NgayLap";
             this.NgayLap.HeaderText = "Ngày Lập";
             this.NgayLap.Name = "NgayLap";
-            // 
-            // sopn
-            // 
-            this.sopn.DataPropertyName = "SoPN";
-            this.sopn.HeaderText = "Số phiếu";
-            this.sopn.Name = "sopn";
-            this.sopn.Width = 70;
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã NCC";
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Width = 70;
-            // 
-            // MaTk
-            // 
-            this.MaTk.DataPropertyName = "MaTk";
-            this.MaTk.HeaderText = "Mã TK";
-            this.MaTk.Name = "MaTk";
-            this.MaTk.Width = 70;
-            // 
-            // NgayNhap
-            // 
-            this.NgayNhap.DataPropertyName = "NgayNhap";
-            this.NgayNhap.HeaderText = "Ngày Nhập";
-            this.NgayNhap.Name = "NgayNhap";
             // 
             // DanhSachHoaDon
             // 

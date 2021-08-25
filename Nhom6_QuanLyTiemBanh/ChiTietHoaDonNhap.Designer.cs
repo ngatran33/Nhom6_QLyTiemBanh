@@ -51,14 +51,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDsachHang = new System.Windows.Forms.DataGridView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongTien = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -298,7 +298,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvDsachHang);
-            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.lblTongTien);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -323,39 +323,6 @@
             this.dgvDsachHang.RowTemplate.Height = 24;
             this.dgvDsachHang.Size = new System.Drawing.Size(784, 215);
             this.dgvDsachHang.TabIndex = 3;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(958, 271);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(18, 20);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "0";
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(825, 271);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 20);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Tổng Tiền:";
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(39, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(213, 20);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Danh sách sản phẩm Nhập:";
             // 
             // MaSP
             // 
@@ -386,6 +353,39 @@
             this.TongTien.DataPropertyName = "TongTienNhap";
             this.TongTien.HeaderText = "Thành tiền";
             this.TongTien.Name = "TongTien";
+            // 
+            // lblTongTien
+            // 
+            this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTien.Location = new System.Drawing.Point(958, 271);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(18, 20);
+            this.lblTongTien.TabIndex = 2;
+            this.lblTongTien.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(825, 271);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 20);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Tổng Tiền:";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(39, 14);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(213, 20);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Danh sách sản phẩm Nhập:";
             // 
             // ChiTietHoaDonNhap
             // 
@@ -435,7 +435,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView dgvDsachHang;

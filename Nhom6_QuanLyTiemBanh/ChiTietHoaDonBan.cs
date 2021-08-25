@@ -12,9 +12,15 @@ namespace Nhom6_QuanLyTiemBanh
 {
     public partial class ChiTietHoaDonBan : Form
     {
+        public static int mahd = -1;
         public ChiTietHoaDonBan()
         {
             InitializeComponent();
+        }
+
+        private void ChiTietHoaDonBan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
