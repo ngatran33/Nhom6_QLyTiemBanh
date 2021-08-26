@@ -104,7 +104,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                if(txtMaTaiKhoan.Text == null)
+                if(txtMaTaiKhoan.Text != "")
                 {
                     if (txtTenDangNhap.Text == "")
                     {
@@ -151,7 +151,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                if(txtMaTaiKhoan.Text == null)
+                if(txtMaTaiKhoan.Text != "")
                 {
                     data.XoaTaiKhoan(int.Parse(txtMaTaiKhoan.Text));
                     NhanVien_Load(sender, e);

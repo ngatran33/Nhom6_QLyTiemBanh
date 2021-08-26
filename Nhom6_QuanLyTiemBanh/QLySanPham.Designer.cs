@@ -142,9 +142,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(282, 115);
+            this.btnXoa.Location = new System.Drawing.Point(257, 115);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(159, 41);
+            this.btnXoa.Size = new System.Drawing.Size(196, 41);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@
             // 
             this.btnCapNhat.Location = new System.Drawing.Point(32, 115);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(169, 41);
+            this.btnCapNhat.Size = new System.Drawing.Size(190, 41);
             this.btnCapNhat.TabIndex = 2;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
@@ -162,9 +162,9 @@
             // 
             // btnTimKiemTheoTen
             // 
-            this.btnTimKiemTheoTen.Location = new System.Drawing.Point(282, 190);
+            this.btnTimKiemTheoTen.Location = new System.Drawing.Point(257, 190);
             this.btnTimKiemTheoTen.Name = "btnTimKiemTheoTen";
-            this.btnTimKiemTheoTen.Size = new System.Drawing.Size(159, 42);
+            this.btnTimKiemTheoTen.Size = new System.Drawing.Size(196, 42);
             this.btnTimKiemTheoTen.TabIndex = 5;
             this.btnTimKiemTheoTen.Text = "Tìm kiếm theo tên";
             this.btnTimKiemTheoTen.UseVisualStyleBackColor = true;
@@ -172,9 +172,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(282, 44);
+            this.btnThem.Location = new System.Drawing.Point(257, 44);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(159, 41);
+            this.btnThem.Size = new System.Drawing.Size(196, 41);
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             // 
             this.btnHienThi.Location = new System.Drawing.Point(32, 44);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(169, 41);
+            this.btnHienThi.Size = new System.Drawing.Size(190, 41);
             this.btnHienThi.TabIndex = 0;
             this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             // 
             this.btnTimKiemTheoMa.Location = new System.Drawing.Point(32, 190);
             this.btnTimKiemTheoMa.Name = "btnTimKiemTheoMa";
-            this.btnTimKiemTheoMa.Size = new System.Drawing.Size(169, 42);
+            this.btnTimKiemTheoMa.Size = new System.Drawing.Size(190, 42);
             this.btnTimKiemTheoMa.TabIndex = 4;
             this.btnTimKiemTheoMa.Text = "Tìm kiếm theo mã";
             this.btnTimKiemTheoMa.UseVisualStyleBackColor = true;

@@ -12,8 +12,8 @@ namespace Nhom6_QuanLyTiemBanh.DBConnection
     {
         public SqlConnection getConnect()
         {
-            //String conString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
-            String conString = @"Data Source=DESKTOP-QMBOBJ0\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
+            String conString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
+            //String conString = @"Data Source=DESKTOP-QMBOBJ0\SQLEXPRESS;Initial Catalog=Nhom6_QLyTiemBanh;Integrated Security=True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }

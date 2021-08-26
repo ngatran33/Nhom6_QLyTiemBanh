@@ -93,8 +93,8 @@ namespace Nhom6_QuanLyTiemBanh
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
-            {   
-                if (txtMaSP.Text == null)
+            {
+                if (txtMaSP.Text != "")
                 {
                     if (txtTenSP.Text == "")
                     {
@@ -118,7 +118,7 @@ namespace Nhom6_QuanLyTiemBanh
                 else
                 {
                     MessageBox.Show("Chọn sản phẩm cần cập nhật", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } 
+                }
             }
             catch (FormatException ex)
             {
@@ -134,15 +134,15 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                if (txtMaSP.Text == null)
+                if (txtMaSP.Text == "")
+                {
+                    MessageBox.Show("Chọn sản phẩm cần xoá", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                }
+                else
                 {
                     data.XoaSanPham(int.Parse(txtMaSP.Text));
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
-                }
-                else
-                {
-                    MessageBox.Show("Chọn sản phẩm cần xoá", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }   
             }
             catch (Exception ex)
