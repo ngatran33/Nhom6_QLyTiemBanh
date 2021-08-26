@@ -77,7 +77,7 @@ namespace Nhom6_QuanLyTiemBanh
                     {
                         tong += int.Parse(row.Cells[4].Value.ToString());
                     }
-                    lblTongTien.Text = tong + "";
+                    lblTongTien.Text = tong + ".000 VND";
                 }
             }
             catch(Exception ex)
@@ -131,12 +131,15 @@ namespace Nhom6_QuanLyTiemBanh
         {
             if (index != -1)
             {
-                if(MessageBox.Show("Bạn chắc chắn muốn xóa dòng "+ index, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if(MessageBox.Show("Bạn chắc chắn muốn xóa dòng "+ (index +1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     dgvDsachSP.Rows.RemoveAt(index);
-                    index = -1;
                     cleartxt();
                 }
+                index = -1;
+            }else
+            {
+                MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

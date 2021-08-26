@@ -155,6 +155,9 @@
     <EmbeddedResource Include="DanhSachHoaDon.resx">
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonBan.resx">
+      <DependentUpon>HoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HoaDonNhap.resx">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
