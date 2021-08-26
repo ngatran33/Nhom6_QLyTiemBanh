@@ -38,6 +38,7 @@ namespace Nhom6_QuanLyTiemBanh
                 if(obj.checkTaiKhoan(dnTxtTenDn.Text, dnTxtMatKhau.Text)){
                     MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TrangChu.tt = obj.getMaTk(dnTxtTenDn.Text, dnTxtMatKhau.Text);
+                    
                     //TrangChu fm = new TrangChu();
                     //fm.Show();
                     this.Close();

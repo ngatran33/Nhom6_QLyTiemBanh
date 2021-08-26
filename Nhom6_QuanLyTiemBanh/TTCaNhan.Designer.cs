@@ -250,6 +250,7 @@
             this.btnHienThi.TabIndex = 3;
             this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
             // btnCapNhat
             // 
@@ -259,6 +260,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // label1
             // 
@@ -281,6 +283,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "TTCaNhan";
             this.Text = "TTCaNhan";
+            this.Load += new System.EventHandler(this.TTCaNhan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

@@ -20,6 +20,14 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             return table;
         }
 
+        public DataTable getThongTinCaNhan(int maTK)
+        {
+            String sql = "Select * from TaiKhoan where MaTK=" + maTK +  "";
+            DataTable table = new DataTable();
+            table = dataConn.GetTable(sql);
+            return table;
+        }
+
         public DataTable ShowNhanVien()
         {
             String sql = "Select * from TaiKhoan where TinhTrang='" + true + "'";

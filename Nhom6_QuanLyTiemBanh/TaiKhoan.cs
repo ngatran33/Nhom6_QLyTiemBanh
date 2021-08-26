@@ -44,8 +44,15 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void QuanLyNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NhanVien fm = new NhanVien();
-            AddForm(fm);
+            if (data.checkMaTaiKhoanNhanVien(int.Parse(TrangChu.tt)))
+            {
+                MessageBox.Show("Chức năng quản lý nhân viên của Admin. Vui lòng chọn chức năng khác!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                NhanVien fm = new NhanVien();
+                AddForm(fm);
+            }
         }
     }
 }
