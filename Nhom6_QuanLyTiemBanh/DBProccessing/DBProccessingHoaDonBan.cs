@@ -46,7 +46,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         }
         public void insertCTHD(int masp, int sl, int tong)
         {
-            string sql = "INSERT INTO ChiTietHoaDon VALUES( " + getMaHDMoiThem() + "," + masp + "," + sl + "," + tong;
+            string sql = "INSERT INTO ChiTietHoaDon VALUES( " + getMaHDMoiThem() + "," + masp + "," + sl + "," + tong + ")";
             dbConn.ExecuteNonQuery(sql);
         }
         public void updateSLco(int sl, int masp)

@@ -23,8 +23,8 @@ namespace Nhom6_QuanLyTiemBanh
         private void HoaDonBan_Load(object sender, EventArgs e)
         {
             cbbKH.DataSource = obj.getKhachHang();
-            cbbKH.DisplayMember = "MaKH";
-            cbbKH.ValueMember = "TenKH";
+            cbbKH.DisplayMember = "TenKH";
+            cbbKH.ValueMember = "MaKH";
             cbbSP.DataSource = obj.getSanPham();
             cbbSP.DisplayMember = "TenSP";
             cbbSP.ValueMember = "MaSP";
@@ -120,6 +120,10 @@ namespace Nhom6_QuanLyTiemBanh
         private void dgv_cellclick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
+            cbbSP.SelectedValue = dgvSP.Rows[index].Cells[0].Value.ToString();
+            txtSL.Text = dgvSP.Rows[index].Cells[2].Value.ToString();
+            txtDG.Text = dgvSP.Rows[index].Cells[3].Value.ToString();
+            txtThanhTien.Text = dgvSP.Rows[index].Cells[4].Value.ToString();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -133,6 +137,10 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 index = -1;
             }
+            else
+            {
+                MessageBox.Show("Chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnLap_Click(object sender, EventArgs e)
@@ -140,7 +148,7 @@ namespace Nhom6_QuanLyTiemBanh
             if (MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
-                {//(int sp, int masp, int sl, int gia, int tong)
+                {//int masp, int sl, int tong
                     obj.insertHD(int.Parse(cbbKH.SelectedValue.ToString()), dtpNgayLap.Value);
                     txtMaHD.Text = obj.getMaHDMoiThem() + "";
                     if (dgvSP.Rows.Count > 0)
@@ -172,6 +180,48 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void dg_textchange(object sender, EventArgs e)
+        {
+            try
+            {
+                int sl = int.Parse(txtSL.Text);
+                double gia = double.Parse(txtDG.Text);
+                txtThanhTien.Text = (sl * gia) + "";
+            }
+            catch (Exception ex)
+            {
+                txtThanhTien.Text = "NaN";
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dgvSP.Rows.Clear();
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (dgvSP.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvSP.Rows)
+                {
+                    if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
+                    {
+                        row.Cells[2].Value = txtSL.Text;
+                        cleartxt();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
