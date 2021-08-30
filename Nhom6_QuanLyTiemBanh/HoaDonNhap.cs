@@ -190,6 +190,28 @@ namespace Nhom6_QuanLyTiemBanh
             if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn nhập", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dgvDsachSP.Rows.Clear();
+                cleartxt();
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (dgvDsachSP.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvDsachSP.Rows)
+                {
+                    if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
+                    {
+                        row.Cells[2].Value = txtSL.Text;
+                        row.Cells[3].Value = txtDG.Text;
+                        cleartxt();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

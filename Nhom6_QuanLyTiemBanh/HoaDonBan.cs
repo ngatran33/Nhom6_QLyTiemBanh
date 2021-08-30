@@ -202,6 +202,7 @@ namespace Nhom6_QuanLyTiemBanh
             if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dgvSP.Rows.Clear();
+                cleartxt();
             }
         }
 

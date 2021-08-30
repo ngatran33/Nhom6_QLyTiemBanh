@@ -123,7 +123,7 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(659, 63);
+            this.groupBox2.Location = new System.Drawing.Point(69, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(408, 189);
             this.groupBox2.TabIndex = 1;
@@ -133,7 +133,7 @@
             // txtNgayLap
             // 
             this.txtNgayLap.AutoSize = true;
-            this.txtNgayLap.Location = new System.Drawing.Point(221, 118);
+            this.txtNgayLap.Location = new System.Drawing.Point(125, 118);
             this.txtNgayLap.Name = "txtNgayLap";
             this.txtNgayLap.Size = new System.Drawing.Size(21, 20);
             this.txtNgayLap.TabIndex = 3;
@@ -142,7 +142,7 @@
             // txtMaHD
             // 
             this.txtMaHD.AutoSize = true;
-            this.txtMaHD.Location = new System.Drawing.Point(221, 33);
+            this.txtMaHD.Location = new System.Drawing.Point(125, 33);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(21, 20);
             this.txtMaHD.TabIndex = 2;
@@ -151,7 +151,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(30, 118);
+            this.label13.Location = new System.Drawing.Point(25, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 20);
             this.label13.TabIndex = 1;
@@ -160,7 +160,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(30, 33);
+            this.label12.Location = new System.Drawing.Point(25, 33);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 20);
             this.label12.TabIndex = 0;
@@ -187,7 +187,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(81, 63);
+            this.groupBox1.Location = new System.Drawing.Point(644, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(403, 189);
             this.groupBox1.TabIndex = 0;
@@ -296,7 +296,6 @@
             // dgvDsachHang
             // 
             this.dgvDsachHang.AllowUserToAddRows = false;
-            this.dgvDsachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvDsachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDsachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
@@ -307,16 +306,19 @@
             this.dgvDsachHang.Location = new System.Drawing.Point(3, 44);
             this.dgvDsachHang.Name = "dgvDsachHang";
             this.dgvDsachHang.RowTemplate.Height = 24;
+            this.dgvDsachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDsachHang.Size = new System.Drawing.Size(862, 220);
             this.dgvDsachHang.TabIndex = 0;
             // 
             // MaSP
             // 
+            this.MaSP.DataPropertyName = "MaSP";
             this.MaSP.HeaderText = "Mã SP";
             this.MaSP.Name = "MaSP";
             // 
             // TenSP
             // 
+            this.TenSP.DataPropertyName = "Gia";
             this.TenSP.HeaderText = "Tên SP";
             this.TenSP.Name = "TenSP";
             // 
@@ -327,11 +329,13 @@
             // 
             // SoLuongBan
             // 
+            this.SoLuongBan.DataPropertyName = "Slco";
             this.SoLuongBan.HeaderText = "Số lượng";
             this.SoLuongBan.Name = "SoLuongBan";
             // 
             // TongTien
             // 
+            this.TongTien.DataPropertyName = "TongTien";
             this.TongTien.HeaderText = "Thành tiền";
             this.TongTien.Name = "TongTien";
             // 
@@ -343,6 +347,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChiTietHoaDonBan";
             this.Text = "ChiTietHoaDonBan";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_close);
             this.Load += new System.EventHandler(this.ChiTietHoaDonBan_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

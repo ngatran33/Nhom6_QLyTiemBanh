@@ -112,6 +112,41 @@ namespace Nhom6_QuanLyTiemBanh
                 fm.Show();
                 dgv_hd_row = -1;
             }
+            else
+            {
+                MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xem", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void text_changed_makh(object sender, EventArgs e)
+        {
+            if (!txttimMA.Text.Equals(""))
+            {
+                dgvHoaDOn.DataSource = obj.getTimKiem(int.Parse(txttimMA.Text));
+            }
+            else
+            {
+                DanhSachHoaDon_Load(sender, e);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            txttimMA.Clear();
+            txtTimPhieu.Clear();
+        }
+
+        private void text_changed_Nhap(object sender, EventArgs e)
+        {
+
+            if (!txttimMA.Text.Equals(""))
+            {
+                dgvHDN.DataSource = obj.getTimKiemHDN(int.Parse(txtTimPhieu.Text));
+            }
+            else
+            {
+                DanhSachHoaDon_Load(sender, e);
+            }
         }
     }
 }

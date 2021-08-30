@@ -51,5 +51,15 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             }
             return false;
         }
+        public DataTable getTimKiem(int mahd)
+        {
+            String sql = "Select * from HoaDon WHERE MaHD= " + mahd;
+            return dbConn.GetTable(sql);
+        }
+        public DataTable getTimKiemHDN(int sp)
+        {
+            String sql = "Select * from HoaDonNhap WHERE SoPN= " + sp;
+            return dbConn.GetTable(sql);
+        }
     }
 }

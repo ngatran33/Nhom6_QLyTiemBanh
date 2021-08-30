@@ -71,6 +71,7 @@
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection\DBConnectionQly.cs" />
+    <Compile Include="DBProccessing\DBProccessingCTBan.cs" />
     <Compile Include="DBProccessing\DBProccessingCTNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingDangNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingDSHoaDon.cs" />

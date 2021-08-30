@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.cbbNCC = new System.Windows.Forms.ComboBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtSPN = new System.Windows.Forms.TextBox();
@@ -60,8 +61,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsachSP)).BeginInit();
@@ -89,6 +90,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu nhập";
+            // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Enabled = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(133, 159);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(237, 27);
+            this.txtNhanVien.TabIndex = 7;
             // 
             // cbbNCC
             // 
@@ -303,11 +312,11 @@
             // 
             this.btnThemSp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThemSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSp.Location = new System.Drawing.Point(141, 9);
+            this.btnThemSp.Location = new System.Drawing.Point(24, 10);
             this.btnThemSp.Name = "btnThemSp";
-            this.btnThemSp.Size = new System.Drawing.Size(98, 37);
+            this.btnThemSp.Size = new System.Drawing.Size(148, 37);
             this.btnThemSp.TabIndex = 3;
-            this.btnThemSp.Text = "Thêm SP";
+            this.btnThemSp.Text = "Thêm sản phẩm";
             this.btnThemSp.UseVisualStyleBackColor = true;
             this.btnThemSp.Click += new System.EventHandler(this.btnThemSp_Click);
             // 
@@ -315,11 +324,11 @@
             // 
             this.btnXoaSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSP.Location = new System.Drawing.Point(326, 9);
+            this.btnXoaSP.Location = new System.Drawing.Point(241, 10);
             this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(98, 37);
+            this.btnXoaSP.Size = new System.Drawing.Size(156, 37);
             this.btnXoaSP.TabIndex = 4;
-            this.btnXoaSP.Text = "Xóa SP";
+            this.btnXoaSP.Text = "Xóa sản phẩm";
             this.btnXoaSP.UseVisualStyleBackColor = true;
             this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
@@ -327,7 +336,7 @@
             // 
             this.btnLapHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLapHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapHD.Location = new System.Drawing.Point(511, 9);
+            this.btnLapHD.Location = new System.Drawing.Point(700, 10);
             this.btnLapHD.Name = "btnLapHD";
             this.btnLapHD.Size = new System.Drawing.Size(133, 37);
             this.btnLapHD.TabIndex = 5;
@@ -339,7 +348,7 @@
             // 
             this.btnHuyHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHuyHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyHD.Location = new System.Drawing.Point(696, 9);
+            this.btnHuyHD.Location = new System.Drawing.Point(902, 10);
             this.btnHuyHD.Name = "btnHuyHD";
             this.btnHuyHD.Size = new System.Drawing.Size(98, 37);
             this.btnHuyHD.TabIndex = 6;
@@ -400,6 +409,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnLapHD);
             this.panel2.Controls.Add(this.btnThemSp);
             this.panel2.Controls.Add(this.btnXoaSP);
@@ -410,6 +420,17 @@
             this.panel2.Size = new System.Drawing.Size(1022, 58);
             this.panel2.TabIndex = 3;
             // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(466, 10);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(165, 35);
+            this.btnSua.TabIndex = 7;
+            this.btnSua.Text = "Sửa sản phẩm";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label9);
@@ -419,14 +440,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1022, 48);
             this.panel3.TabIndex = 4;
-            // 
-            // txtNhanVien
-            // 
-            this.txtNhanVien.Enabled = false;
-            this.txtNhanVien.Location = new System.Drawing.Point(133, 159);
-            this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Size = new System.Drawing.Size(237, 27);
-            this.txtNhanVien.TabIndex = 7;
             // 
             // HoaDonNhap
             // 
@@ -488,5 +501,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtNhanVien;
+        private System.Windows.Forms.Button btnSua;
     }
 }

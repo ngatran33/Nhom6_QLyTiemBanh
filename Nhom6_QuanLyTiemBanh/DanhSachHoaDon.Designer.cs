@@ -51,6 +51,7 @@
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,7 +69,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1028, 663);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -79,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1022, 88);
+            this.panel1.Size = new System.Drawing.Size(1022, 55);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -87,7 +88,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(444, 21);
+            this.label1.Location = new System.Drawing.Point(438, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 29);
             this.label1.TabIndex = 0;
@@ -95,6 +96,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtTimPhieu);
@@ -108,53 +110,55 @@
             this.panel2.Controls.Add(this.dgvHDN);
             this.panel2.Controls.Add(this.dgvHoaDOn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 97);
+            this.panel2.Location = new System.Drawing.Point(3, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1022, 563);
+            this.panel2.Size = new System.Drawing.Size(1022, 596);
             this.panel2.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(520, 513);
+            this.label5.Location = new System.Drawing.Point(548, 513);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 20);
+            this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Tìm Theo số phiếu";
+            this.label5.Text = "Tìm Theo số phiếu:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(520, 461);
+            this.label4.Location = new System.Drawing.Point(548, 461);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.Size = new System.Drawing.Size(148, 20);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Tìm Theo Mã ";
+            this.label4.Text = "Tìm Theo max HD:";
             // 
             // txtTimPhieu
             // 
             this.txtTimPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimPhieu.Location = new System.Drawing.Point(709, 506);
+            this.txtTimPhieu.Location = new System.Drawing.Point(741, 506);
             this.txtTimPhieu.Name = "txtTimPhieu";
-            this.txtTimPhieu.Size = new System.Drawing.Size(284, 27);
+            this.txtTimPhieu.Size = new System.Drawing.Size(135, 27);
             this.txtTimPhieu.TabIndex = 7;
+            this.txtTimPhieu.TextChanged += new System.EventHandler(this.text_changed_Nhap);
             // 
             // txttimMA
             // 
             this.txttimMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttimMA.Location = new System.Drawing.Point(709, 454);
+            this.txttimMA.Location = new System.Drawing.Point(741, 454);
             this.txttimMA.Name = "txttimMA";
-            this.txttimMA.Size = new System.Drawing.Size(284, 27);
+            this.txttimMA.Size = new System.Drawing.Size(135, 27);
             this.txttimMA.TabIndex = 7;
+            this.txttimMA.TextChanged += new System.EventHandler(this.text_changed_makh);
             // 
             // btnXemCTHD
             // 
             this.btnXemCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemCTHD.Location = new System.Drawing.Point(227, 506);
+            this.btnXemCTHD.Location = new System.Drawing.Point(200, 506);
             this.btnXemCTHD.Name = "btnXemCTHD";
-            this.btnXemCTHD.Size = new System.Drawing.Size(232, 41);
+            this.btnXemCTHD.Size = new System.Drawing.Size(259, 41);
             this.btnXemCTHD.TabIndex = 6;
             this.btnXemCTHD.Text = "Xem Chi Tiết Hóa Đơn Bán";
             this.btnXemCTHD.UseVisualStyleBackColor = true;
@@ -163,9 +167,9 @@
             // btnXemCTHDN
             // 
             this.btnXemCTHDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemCTHDN.Location = new System.Drawing.Point(227, 451);
+            this.btnXemCTHDN.Location = new System.Drawing.Point(200, 451);
             this.btnXemCTHDN.Name = "btnXemCTHDN";
-            this.btnXemCTHDN.Size = new System.Drawing.Size(229, 41);
+            this.btnXemCTHDN.Size = new System.Drawing.Size(256, 41);
             this.btnXemCTHDN.TabIndex = 5;
             this.btnXemCTHDN.Text = "Xem Chi Tiết Hóa Đơn Nhập";
             this.btnXemCTHDN.UseVisualStyleBackColor = true;
@@ -174,7 +178,7 @@
             // btnxoaHD
             // 
             this.btnxoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoaHD.Location = new System.Drawing.Point(23, 506);
+            this.btnxoaHD.Location = new System.Drawing.Point(3, 506);
             this.btnxoaHD.Name = "btnxoaHD";
             this.btnxoaHD.Size = new System.Drawing.Size(179, 41);
             this.btnxoaHD.TabIndex = 4;
@@ -185,7 +189,7 @@
             // btnXoaHDN
             // 
             this.btnXoaHDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaHDN.Location = new System.Drawing.Point(23, 451);
+            this.btnXoaHDN.Location = new System.Drawing.Point(3, 451);
             this.btnXoaHDN.Name = "btnXoaHDN";
             this.btnXoaHDN.Size = new System.Drawing.Size(179, 41);
             this.btnXoaHDN.TabIndex = 3;
@@ -284,7 +288,7 @@
             // MaKH
             // 
             this.MaKH.DataPropertyName = "MaKh";
-            this.MaKH.HeaderText = "Mã Khach";
+            this.MaKH.HeaderText = "Mã Khách";
             this.MaKH.Name = "MaKH";
             // 
             // NgayLap
@@ -292,6 +296,17 @@
             this.NgayLap.DataPropertyName = "NgayLap";
             this.NgayLap.HeaderText = "Ngày Lập";
             this.NgayLap.Name = "NgayLap";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(908, 472);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 46);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // DanhSachHoaDon
             // 
@@ -323,9 +338,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvHDN;
         private System.Windows.Forms.DataGridView dgvHoaDOn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTimPhieu;
@@ -338,5 +350,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTk;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
