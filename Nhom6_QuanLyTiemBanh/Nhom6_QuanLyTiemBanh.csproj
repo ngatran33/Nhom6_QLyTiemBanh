@@ -162,6 +162,9 @@
     <EmbeddedResource Include="HoaDonNhap.resx">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="QLyHoaDon.resx">
       <DependentUpon>QLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlyKhachHang.resx">
+      <DependentUpon>QlyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLySanPham.resx">
       <DependentUpon>QLySanPham.cs</DependentUpon>
