@@ -60,10 +60,10 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSua = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsachSP)).BeginInit();
@@ -362,7 +362,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(841, 15);
+            this.label9.Location = new System.Drawing.Point(732, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 20);
             this.label9.TabIndex = 7;
@@ -373,7 +373,7 @@
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongTien.Location = new System.Drawing.Point(956, 15);
+            this.lblTongTien.Location = new System.Drawing.Point(847, 14);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(18, 20);
             this.lblTongTien.TabIndex = 8;
@@ -409,6 +409,18 @@
             this.panel1.Size = new System.Drawing.Size(1022, 350);
             this.panel1.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(432, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(147, 25);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Hóa đơn nhập";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnSua);
@@ -443,18 +455,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1022, 40);
             this.panel3.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(432, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(147, 25);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Hóa đơn nhập";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // HoaDonNhap
             // 

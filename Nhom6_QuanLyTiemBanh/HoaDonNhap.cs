@@ -70,15 +70,7 @@ namespace Nhom6_QuanLyTiemBanh
                     dgvDsachSP.Rows.Add(masp, tensp, sl, donG, thanhTien);
                     cleartxt();
                 }
-                if (dgvDsachSP.Rows.Count > 0)
-                {
-                    int tong = 0;
-                    foreach (DataGridViewRow row in dgvDsachSP.Rows)
-                    {
-                        tong += int.Parse(row.Cells[4].Value.ToString());
-                    }
-                    lblTongTien.Text = tong + ".000 VND";
-                }
+                tinhtong();
             }
             catch(Exception ex)
             {
@@ -135,6 +127,7 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     dgvDsachSP.Rows.RemoveAt(index);
                     cleartxt();
+                    tinhtong();
                 }
                 index = -1;
             }else
@@ -204,6 +197,8 @@ namespace Nhom6_QuanLyTiemBanh
                     {
                         row.Cells[2].Value = txtSL.Text;
                         row.Cells[3].Value = txtDG.Text;
+                        row.Cells[4].Value = txtThanhTien.Text;
+                        tinhtong();
                         cleartxt();
                         return;
                     }
@@ -212,6 +207,19 @@ namespace Nhom6_QuanLyTiemBanh
             else
             {
                 MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tinhtong()
+        {
+            if (dgvDsachSP.Rows.Count > 0)
+            {
+                int tong = 0;
+                foreach (DataGridViewRow row in dgvDsachSP.Rows)
+                {
+                    tong += int.Parse(row.Cells[4].Value.ToString());
+                }
+                lblTongTien.Text = tong + ".0000 VND";
             }
         }
     }

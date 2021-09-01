@@ -39,7 +39,6 @@
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDx = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
@@ -52,12 +51,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -155,18 +155,6 @@
             this.panel1.Size = new System.Drawing.Size(260, 689);
             this.panel1.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(-36, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnDx
             // 
             this.btnDx.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -177,7 +165,7 @@
             this.btnDx.TabIndex = 6;
             this.btnDx.Text = "Đăng xuất";
             this.btnDx.UseVisualStyleBackColor = true;
-            this.btnDx.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnDx.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnThoat
             // 
@@ -255,16 +243,20 @@
             // btnTrangChu
             // 
             this.btnTrangChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangChu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnTrangChu.Location = new System.Drawing.Point(30, 208);
             this.btnTrangChu.Name = "btnTrangChu";
             this.btnTrangChu.Size = new System.Drawing.Size(200, 40);
             this.btnTrangChu.TabIndex = 0;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = true;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelTrangChu
             // 
+            this.panelTrangChu.BackColor = System.Drawing.Color.LightGray;
             this.panelTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTrangChu.Location = new System.Drawing.Point(269, 3);
             this.panelTrangChu.Name = "panelTrangChu";
@@ -309,9 +301,21 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 695F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1346, 695);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(-36, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(306, 207);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // TrangChu
             // 
@@ -328,11 +332,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

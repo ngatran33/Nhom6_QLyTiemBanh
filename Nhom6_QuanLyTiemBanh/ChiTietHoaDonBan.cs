@@ -40,7 +40,7 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     t += double.Parse(row.Cells[4].Value.ToString());
                 }
-                lblTongTien.Text = t + ".000 VND";
+                lblTongTien.Text = t + ".0000 VND";
             }
 
         }

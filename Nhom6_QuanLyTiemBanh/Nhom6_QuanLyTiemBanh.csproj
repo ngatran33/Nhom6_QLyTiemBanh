@@ -94,6 +94,12 @@
     <Compile Include="HoaDonNhap.Designer.cs">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManChinh.Designer.cs">
+      <DependentUpon>ManChinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <EmbeddedResource Include="HoaDonNhap.resx">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManChinh.resx">
+      <DependentUpon>ManChinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QLyHoaDon.resx">
       <DependentUpon>QLyHoaDon.cs</DependentUpon>
@@ -207,6 +217,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banh.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-truong-cn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daubeppng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banh1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banh.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

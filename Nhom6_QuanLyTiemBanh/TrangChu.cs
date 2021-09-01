@@ -20,7 +20,8 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(tt, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ManChinh fm = new ManChinh();
+            AddForm(fm);
         }
 
         private void mnuThoat_Click(object sender, EventArgs e)
@@ -109,5 +110,21 @@ namespace Nhom6_QuanLyTiemBanh
             AddForm(fm);
         }
 
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            ManChinh fm = new ManChinh();
+            AddForm(fm);
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chán muốn đăng xuất.", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                DangNhap fm = new DangNhap();
+                fm.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }

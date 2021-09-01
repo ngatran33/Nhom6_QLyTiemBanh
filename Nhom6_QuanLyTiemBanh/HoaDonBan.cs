@@ -94,19 +94,24 @@ namespace Nhom6_QuanLyTiemBanh
                     dgvSP.Rows.Add(masp, tensp, sl, donG, thanhTien);
                     cleartxt();
                 }
-                if (dgvSP.Rows.Count > 0)
-                {
-                    Double tong = 0;
-                    foreach (DataGridViewRow row in dgvSP.Rows)
-                    {
-                        tong += double.Parse(row.Cells[4].Value.ToString());
-                    }
-                    lblTongTien.Text = tong + ".000 VND";
-                }
+                tinhtong();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Số lượng và đơn giá phải là số nguyên lơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void tinhtong()
+        {
+            if (dgvSP.Rows.Count > 0)
+            {
+                Double tong = 0;
+                foreach (DataGridViewRow row in dgvSP.Rows)
+                {
+                    tong += double.Parse(row.Cells[4].Value.ToString());
+                }
+                lblTongTien.Text = tong + ".0000 VND";
             }
         }
 
@@ -133,6 +138,7 @@ namespace Nhom6_QuanLyTiemBanh
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     dgvSP.Rows.RemoveAt(index);
+                    tinhtong();
                     cleartxt();
                 }
                 index = -1;
@@ -220,6 +226,8 @@ namespace Nhom6_QuanLyTiemBanh
                     if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
                     {
                         row.Cells[2].Value = txtSL.Text;
+                        row.Cells[4].Value = txtThanhTien.Text;
+                        tinhtong();
                         cleartxt();
                         return;
                     }

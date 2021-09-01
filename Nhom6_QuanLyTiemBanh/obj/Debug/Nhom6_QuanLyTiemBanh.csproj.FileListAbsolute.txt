@@ -79,3 +79,4 @@ C:\Users\DonNguyenVan\OneDrive\Documents\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTi
 C:\Users\DonNguyenVan\OneDrive\Documents\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.pdb
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.NhaCungCap.resources
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QlyKhachHang.resources
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ManChinh.resources
