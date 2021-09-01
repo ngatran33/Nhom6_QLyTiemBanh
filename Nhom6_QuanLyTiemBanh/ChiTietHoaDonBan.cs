@@ -35,10 +35,10 @@ namespace Nhom6_QuanLyTiemBanh
             }
             if (dgvDsachHang.Rows.Count > 0)
             {
-                int t = 0;
-                foreach(DataGridViewRow row in dgvDsachHang.Rows)
+                double t = 0;
+                foreach (DataGridViewRow row in dgvDsachHang.Rows)
                 {
-                    t+=int.Parse(row.Cells[4].ToString());
+                    t += double.Parse(row.Cells[4].Value.ToString());
                 }
                 lblTongTien.Text = t + ".000 VND";
             }

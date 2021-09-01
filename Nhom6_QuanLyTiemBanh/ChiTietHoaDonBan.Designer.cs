@@ -265,7 +265,7 @@
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongTien.Location = new System.Drawing.Point(1018, 301);
+            this.lblTongTien.Location = new System.Drawing.Point(919, 302);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(18, 20);
             this.lblTongTien.TabIndex = 2;
@@ -287,7 +287,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(894, 301);
+            this.label1.Location = new System.Drawing.Point(818, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 1;
@@ -318,12 +318,14 @@
             // 
             // TenSP
             // 
-            this.TenSP.DataPropertyName = "Gia";
+            this.TenSP.DataPropertyName = "TenSP";
             this.TenSP.HeaderText = "Tên SP";
             this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 200;
             // 
             // Gia
             // 
+            this.Gia.DataPropertyName = "Gia";
             this.Gia.HeaderText = "Đơn Giá";
             this.Gia.Name = "Gia";
             // 

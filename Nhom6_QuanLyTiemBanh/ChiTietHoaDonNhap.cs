@@ -40,10 +40,10 @@ namespace Nhom6_QuanLyTiemBanh
                 lblDcNv.Text = table2.Rows[0][5].ToString();
                 if (dgvDsachHang.Rows.Count > 0)
                 {
-                    float tong = 0;
+                    double tong = 0;
                     foreach (DataGridViewRow row in dgvDsachHang.Rows)
                     {
-                        tong += float.Parse(row.Cells[4].Value.ToString());
+                        tong += double.Parse(row.Cells[4].Value.ToString());
                     }
                     lblTongTien.Text = tong + "";
                 }
