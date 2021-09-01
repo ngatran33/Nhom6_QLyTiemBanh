@@ -36,13 +36,13 @@ namespace Nhom6_QuanLyTiemBanh
             else
             {
                 if(obj.checkTaiKhoan(dnTxtTenDn.Text, dnTxtMatKhau.Text)){
+                    this.Hide();
                     MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TrangChu.tt = obj.getMaTk(dnTxtTenDn.Text, dnTxtMatKhau.Text);
-                    
-                    //TrangChu fm = new TrangChu();
-                    //fm.Show();
+
+                    TrangChu fm = new TrangChu();
+                    fm.ShowDialog();
                     this.Close();
-                    Program.th1.Start();
                 }
                 else
                 {

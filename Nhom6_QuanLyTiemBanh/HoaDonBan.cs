@@ -145,6 +145,11 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnLap_Click(object sender, EventArgs e)
         {
+            if (!obj.checkTenKH(cbbKH.Text))
+            {
+                MessageBox.Show("Khách hàng k tồn tại. Tạo mới khách hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -225,5 +230,13 @@ namespace Nhom6_QuanLyTiemBanh
                 MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnhdban_Click(object sender, EventArgs e)
+        {
+            QlyKhachHang f = new QlyKhachHang();
+            f.Show();
+            HoaDonBan_Load(sender, e);
+        }
+        
     }
 }

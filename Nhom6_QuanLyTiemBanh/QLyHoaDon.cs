@@ -43,6 +43,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             DanhSachHoaDon fm = new DanhSachHoaDon();
             AddForm(fm);
+            
         }
 
         private void danhSáchHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,5 +51,6 @@ namespace Nhom6_QuanLyTiemBanh
             DanhSachHoaDon fm = new DanhSachHoaDon();
             AddForm(fm);
         }
+
     }
 }

@@ -46,7 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtTongTien = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDsachHang = new System.Windows.Forms.DataGridView();
@@ -250,7 +250,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtTongTien);
+            this.panel2.Controls.Add(this.lblTongTien);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dgvDsachHang);
@@ -260,16 +260,16 @@
             this.panel2.Size = new System.Drawing.Size(1134, 346);
             this.panel2.TabIndex = 1;
             // 
-            // txtTongTien
+            // lblTongTien
             // 
-            this.txtTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTongTien.AutoSize = true;
-            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(1018, 301);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(18, 20);
-            this.txtTongTien.TabIndex = 2;
-            this.txtTongTien.Text = "0";
+            this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTien.Location = new System.Drawing.Point(1018, 301);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(18, 20);
+            this.lblTongTien.TabIndex = 2;
+            this.lblTongTien.Text = "0";
             // 
             // label3
             // 
@@ -384,7 +384,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label txtTongTien;
+        private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;

@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnuHDN = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDsachHD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHDB = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhSáchHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHDN = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHD = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.YellowGreen;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.danhSáchHóaĐơnToolStripMenuItem,
+            this.mnuDsachHD,
             this.mnuHDB,
             this.mnuHDN});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -49,13 +50,13 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // mnuHDN
+            // mnuDsachHD
             // 
-            this.mnuHDN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuHDN.Name = "mnuHDN";
-            this.mnuHDN.Size = new System.Drawing.Size(137, 27);
-            this.mnuHDN.Text = "Hóa Đơn Nhập";
-            this.mnuHDN.Click += new System.EventHandler(this.mnuHDN_Click);
+            this.mnuDsachHD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuDsachHD.Name = "mnuDsachHD";
+            this.mnuDsachHD.Size = new System.Drawing.Size(177, 27);
+            this.mnuDsachHD.Text = "Danh Sách Hóa Đơn";
+            this.mnuDsachHD.Click += new System.EventHandler(this.danhSáchHóaĐơnToolStripMenuItem_Click);
             // 
             // mnuHDB
             // 
@@ -65,13 +66,13 @@
             this.mnuHDB.Text = "Hóa Đơn Bán";
             this.mnuHDB.Click += new System.EventHandler(this.mnuHDB_Click);
             // 
-            // danhSáchHóaĐơnToolStripMenuItem
+            // mnuHDN
             // 
-            this.danhSáchHóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.danhSáchHóaĐơnToolStripMenuItem.Name = "danhSáchHóaĐơnToolStripMenuItem";
-            this.danhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(177, 27);
-            this.danhSáchHóaĐơnToolStripMenuItem.Text = "Danh Sách Hóa Đơn";
-            this.danhSáchHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchHóaĐơnToolStripMenuItem_Click);
+            this.mnuHDN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuHDN.Name = "mnuHDN";
+            this.mnuHDN.Size = new System.Drawing.Size(137, 27);
+            this.mnuHDN.Text = "Hóa Đơn Nhập";
+            this.mnuHDN.Click += new System.EventHandler(this.mnuHDN_Click);
             // 
             // pnlHD
             // 
@@ -106,6 +107,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHDN;
         private System.Windows.Forms.ToolStripMenuItem mnuHDB;
         private System.Windows.Forms.Panel pnlHD;
-        private System.Windows.Forms.ToolStripMenuItem danhSáchHóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuDsachHD;
     }
 }

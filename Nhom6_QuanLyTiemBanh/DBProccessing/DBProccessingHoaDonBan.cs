@@ -54,5 +54,20 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             String sql="UPDATE SanPham Set Slco= Slco-"+sl+ " WHERE MaSP=" + masp;
             dbConn.ExecuteNonQuery(sql);
         }
+        public DataTable getKHTimKiem(String s)
+        {
+            string sql = "SELECT * FROM KhachHang WHERE TenKH LIKE N'%" + s + "%'";
+            return dbConn.GetTable(sql);
+        }
+        public bool checkTenKH(string ten)
+        {
+            string sql = "SELECT * FROM KhachHang WHERE TenKH = N'" + ten + "'";
+            DataTable table= dbConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

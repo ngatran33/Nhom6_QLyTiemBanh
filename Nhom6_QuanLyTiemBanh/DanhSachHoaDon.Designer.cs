@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTimPhieu = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,12 +87,13 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(438, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(411, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 29);
+            this.label1.Size = new System.Drawing.Size(158, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn đã lập";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -115,8 +116,21 @@
             this.panel2.Size = new System.Drawing.Size(1022, 596);
             this.panel2.TabIndex = 1;
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(908, 472);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 46);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(548, 513);
@@ -127,6 +141,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(548, 461);
@@ -137,6 +152,7 @@
             // 
             // txtTimPhieu
             // 
+            this.txtTimPhieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTimPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimPhieu.Location = new System.Drawing.Point(741, 506);
             this.txtTimPhieu.Name = "txtTimPhieu";
@@ -146,6 +162,7 @@
             // 
             // txttimMA
             // 
+            this.txttimMA.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txttimMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttimMA.Location = new System.Drawing.Point(741, 454);
             this.txttimMA.Name = "txttimMA";
@@ -155,28 +172,31 @@
             // 
             // btnXemCTHD
             // 
+            this.btnXemCTHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXemCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemCTHD.Location = new System.Drawing.Point(200, 506);
             this.btnXemCTHD.Name = "btnXemCTHD";
-            this.btnXemCTHD.Size = new System.Drawing.Size(259, 41);
+            this.btnXemCTHD.Size = new System.Drawing.Size(256, 41);
             this.btnXemCTHD.TabIndex = 6;
-            this.btnXemCTHD.Text = "Xem Chi Tiết Hóa Đơn Bán";
+            this.btnXemCTHD.Text = "Xem Hóa Đơn Bán";
             this.btnXemCTHD.UseVisualStyleBackColor = true;
             this.btnXemCTHD.Click += new System.EventHandler(this.btnXemCTHD_Click);
             // 
             // btnXemCTHDN
             // 
+            this.btnXemCTHDN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXemCTHDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemCTHDN.Location = new System.Drawing.Point(200, 451);
             this.btnXemCTHDN.Name = "btnXemCTHDN";
             this.btnXemCTHDN.Size = new System.Drawing.Size(256, 41);
             this.btnXemCTHDN.TabIndex = 5;
-            this.btnXemCTHDN.Text = "Xem Chi Tiết Hóa Đơn Nhập";
+            this.btnXemCTHDN.Text = "Xem Hóa Đơn Nhập";
             this.btnXemCTHDN.UseVisualStyleBackColor = true;
             this.btnXemCTHDN.Click += new System.EventHandler(this.btnXemCTHDN_Click);
             // 
             // btnxoaHD
             // 
+            this.btnxoaHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnxoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoaHD.Location = new System.Drawing.Point(3, 506);
             this.btnxoaHD.Name = "btnxoaHD";
@@ -188,6 +208,7 @@
             // 
             // btnXoaHDN
             // 
+            this.btnXoaHDN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoaHDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaHDN.Location = new System.Drawing.Point(3, 451);
             this.btnXoaHDN.Name = "btnXoaHDN";
@@ -210,6 +231,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 5);
@@ -266,6 +288,7 @@
             // dgvHoaDOn
             // 
             this.dgvHoaDOn.AllowUserToAddRows = false;
+            this.dgvHoaDOn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvHoaDOn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDOn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
@@ -296,17 +319,6 @@
             this.NgayLap.DataPropertyName = "NgayLap";
             this.NgayLap.HeaderText = "Ngày Lập";
             this.NgayLap.Name = "NgayLap";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(908, 472);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 46);
-            this.btnXoa.TabIndex = 9;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // DanhSachHoaDon
             // 

@@ -138,8 +138,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void text_changed_Nhap(object sender, EventArgs e)
         {
-
-            if (!txttimMA.Text.Equals(""))
+            if (!txtTimPhieu.Text.Equals(""))
             {
                 dgvHDN.DataSource = obj.getTimKiemHDN(int.Parse(txtTimPhieu.Text));
             }
