@@ -28,28 +28,31 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
 
         public void SuaKhachHang(int maKH, String TenKH, String DiaChi, String SoDT)
         {
-            String sql = "Update TaiKhoan Set TenKh='" + TenKH + "', DiaChiKH='" + DiaChi + "', SDTKh='" + SoDT + "' where MaKh = " + maKH + "";
+            String sql = "Update KhachHang Set TenKh=N'" + TenKH + "', DiaChiKH=N'" + DiaChi + "', SDTKh='" + SoDT + "' where MaKh = " + maKH + "";
             dataConn.ExecuteNonQuery(sql);
         }
 
-        public void XoaKhachHang(int maTK)
+        public void XoaKhachHang(int maKH)
         {
-            String sql = "Delete TaiKhoan where MaTk=" + maTK + "";
+            String sql = "Delete KhachHang where MaKh=" + maKH + "";
             dataConn.ExecuteNonQuery(sql);
         }
-        public DataTable TimKiemTheoMaKH(int maKH)
+        
+        public DataTable TimKiemTheoHoTen(String hoTen)
         {
-            String sql = "Select * from TaiKhoan where MaTk=" + maKH + "";
+            String sql = "Select * from KhachHang where TenKh=N'" + hoTen + "'";
             DataTable table = new DataTable();
             table = dataConn.GetTable(sql);
             return table;
         }
-        public DataTable TimKiemTheoHoTen(String hoTen)
+        public bool checkTenKH(String tenKH)
         {
-            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen + "'";
-            DataTable table = new DataTable();
-            table = dataConn.GetTable(sql);
-            return table;
+            String sql = "Select * from KhachHang where TenKh=N'" + tenKH + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

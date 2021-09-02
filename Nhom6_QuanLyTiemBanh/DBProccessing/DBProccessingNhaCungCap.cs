@@ -12,7 +12,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
     {
         DBConnection.DBConnectionQly dataConn = new DBConnection.DBConnectionQly();
 
-        public DataTable ShowNhaCC()
+        public DataTable ShowNhaCungCap()
         {
             String sql = "Select * from NhaCungCap";
             DataTable table = new DataTable();
@@ -20,36 +20,39 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             return table;
         }
 
-        public void ThemNhaCC(String HoTen, String DiaChi, String SoDT)
+        public void ThemNhaCungCap(String TenNCC, String DiaChi, String SoDT)
         {
-            String sql = "Insert into NhaCungCap Values (N'" + HoTen + "', N'" + DiaChi + "', '" + SoDT + "')";
+            String sql = "Insert into NhaCungCap Values (N'" + TenNCC + "', N'" + DiaChi + "', '" + SoDT + "')";
             dataConn.ExecuteNonQuery(sql);
         }
 
-        public void SuaTaiKhoan(int maTK, String tenDangNhap, String matKhau, Boolean tinhTrang, String hoTen, String diaChi, String soDT, String gioiTinh)
+        public void SuaNhaCungCap(int maNCC, String TenNCC, String DiaChi, String SoDT)
         {
-            String sql = "Update TaiKhoan Set TenDangNhap='" + tenDangNhap + "', MatKhau='" + matKhau + "', TinhTrang='" + tinhTrang + "', HoTen=N'" + hoTen + "', DiaChi_nv=N'" + diaChi + "', SoDT_nv=N'" + soDT + "', GioiTinh=N'" + gioiTinh + "' where MaTk=" + maTK + "";
+            String sql = "Update NhaCungCap Set TenNcc=N'" + TenNCC + "', DiaChi_NCC=N'" + DiaChi + "', SoDT='" + SoDT + "' where MaNCC = " + maNCC + "";
             dataConn.ExecuteNonQuery(sql);
         }
 
-        public void XoaTaiKhoan(int maTK)
+        public void XoaNhaCungCap(int maNCC)
         {
-            String sql = "Delete TaiKhoan where MaTk=" + maTK + "";
+            String sql = "Delete NhacungCap where MaNCC=" + maNCC + "";
             dataConn.ExecuteNonQuery(sql);
         }
-        public DataTable TimKiemTheoMaTK(int maTK)
+
+        public DataTable TimKiemTheoTen(String hoTen)
         {
-            String sql = "Select * from TaiKhoan where MaTk=" + maTK + "";
+            String sql = "Select * from NhaCungCap where TenNcc=N'" + hoTen + "'";
             DataTable table = new DataTable();
             table = dataConn.GetTable(sql);
             return table;
         }
-        public DataTable TimKiemTheoHoTen(String hoTen)
+        public bool checkNhaCungCap(String tenNCC)
         {
-            String sql = "Select * from TaiKhoan where HoTen=N'" + hoTen + "'";
-            DataTable table = new DataTable();
-            table = dataConn.GetTable(sql);
-            return table;
+            String sql = "Select * from NhaCungCap where TenNcc=N'" + tenNCC + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

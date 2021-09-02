@@ -20,7 +20,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
-            dgvNhaCC.DataSource = data.ShowNhaCC();
+            dgvNhaCC.DataSource = data.ShowNhaCungCap();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -29,32 +29,31 @@ namespace Nhom6_QuanLyTiemBanh
             {
                 if (txtTenNCC.Text == "")
                 {
-                    MessageBox.Show("Tên khách hàng không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtDiaChi.Text == "")
                 {
-                    MessageBox.Show("Địa chỉ không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Địa chỉ không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtSoDT.Text == "")
                 {
-                    MessageBox.Show("Số điện thoại không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số điện thoại không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                data.ThemNhaCC(txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
-                ClearTextBox();
+                data.ThemNhaCungCap(txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
                 NhaCungCap_Load(sender, e);
+                ClearTextBox();
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("duplicate key"))
-                    MessageBox.Show("Trùng mã khách hàng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Trùng mã nhà cung cấp!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -66,6 +65,108 @@ namespace Nhom6_QuanLyTiemBanh
             txtDiaChi.Clear();
             txtSoDT.Clear();
             ActiveControl = txtTenNCC;
+            txtMaNCC.Enabled = false;
         }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            dgvNhaCC.DataSource = data.ShowNhaCungCap();
+        }
+
+        private void dgvNhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaNCC.Enabled = true;
+            int row = e.RowIndex;
+            if (row >= 0)
+            {
+                txtMaNCC.Text = dgvNhaCC.Rows[row].Cells[0].Value.ToString();
+                txtTenNCC.Text = dgvNhaCC.Rows[row].Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvNhaCC.Rows[row].Cells[2].Value.ToString();
+                txtSoDT.Text = dgvNhaCC.Rows[row].Cells[3].Value.ToString();
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txtTenNCC.Text == "")
+                {
+                    MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txtDiaChi.Text == "")
+                {
+                    MessageBox.Show("Địa chỉ nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txtSoDT.Text == "")
+                {
+                    MessageBox.Show("Số điện thoại nhà cung cấp khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                data.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
+                NhaCungCap_Load(sender, e);
+                ClearTextBox();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtMaNCC.Text == null)
+                {
+                    MessageBox.Show("Chọn khách hàng cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    data.XoaNhaCungCap(int.Parse(txtMaNCC.Text));
+                    NhaCungCap_Load(sender, e);
+                    ClearTextBox();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTimKiem.Text == null)
+                {
+                    MessageBox.Show("Nhập tên nhà cung cấp vào ô tìm kiếm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                dgvNhaCC.DataSource = data.TimKiemTheoTen(txtTimKiem.Text);
+                if (data.checkNhaCungCap(txtTimKiem.Text))
+                {
+                    txtTimKiem.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy tên nhà cung cấp!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
     }
 }
