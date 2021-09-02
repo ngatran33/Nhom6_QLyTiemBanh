@@ -54,5 +54,25 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             else
                 return false;
         }
+        public bool checkSDT(String sdt)
+        {
+            String sql = "SELECT * FROM KhachHang WHERE SDTKh='" + sdt + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkSDT(String sdt, int ma)
+        {
+            String sql = "SELECT * FROM KhachHang WHERE SDTKh='" + sdt + "' and MaKh NOT IN (" + ma + ")";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

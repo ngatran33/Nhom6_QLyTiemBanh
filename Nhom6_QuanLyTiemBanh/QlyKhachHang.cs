@@ -12,6 +12,7 @@ namespace Nhom6_QuanLyTiemBanh
 {
     public partial class QlyKhachHang : Form
     {
+        int row = -1;
         DBProccessing.DBProccessingKhachHang data = new DBProccessing.DBProccessingKhachHang();
         public QlyKhachHang()
         {
@@ -42,9 +43,15 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Số điện thoại không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (data.checkSDT(txtSoDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 data.ThemKhachHang(txtHoTen.Text, txtDiaChi.Text, txtSoDT.Text);
                 QlyKhachHang_Load(sender, e);
                 ClearTextBox();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException)
             {
@@ -70,42 +77,57 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            try
+            if (row != -1)
             {
+                try
+                {
 
-                if (txtHoTen.Text == "")
-                {
-                    MessageBox.Show("Họ tên khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (txtHoTen.Text == "")
+                    {
+                        MessageBox.Show("Họ tên khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtDiaChi.Text == "")
+                    {
+                        MessageBox.Show("Địa chỉ khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtSoDT.Text == "")
+                    {
+                        MessageBox.Show("Số điện thoại khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (data.checkSDT(txtSoDT.Text, int.Parse(txtMaKH.Text)))
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    data.SuaKhachHang(int.Parse(txtMaKH.Text), txtHoTen.Text, txtDiaChi.Text, txtSoDT.Text);
+                    QlyKhachHang_Load(sender, e);
+                    ClearTextBox();
+                    row = -1;
+                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (txtDiaChi.Text == "")
+                catch (FormatException)
                 {
-                    MessageBox.Show("Địa chỉ khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (txtSoDT.Text == "")
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Số điện thoại khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                data.SuaKhachHang(int.Parse(txtMaKH.Text), txtHoTen.Text, txtDiaChi.Text, txtSoDT.Text);
-                QlyKhachHang_Load(sender, e);
-                ClearTextBox();
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chọn dòng để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaKH.Enabled = true;
-            int row = e.RowIndex;
+            row = e.RowIndex;
             if (row >= 0)
             {
                 txtMaKH.Text = dgvKhachHang.Rows[row].Cells[0].Value.ToString();
@@ -117,23 +139,37 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+            if (row != -1)
             {
-                if (txtMaKH.Text == null)
+                try
                 {
-                    MessageBox.Show("Chọn khách hàng cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (txtMaKH.Text == null)
+                    {
+                        MessageBox.Show("Chọn khách hàng cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        data.XoaKhachHang(int.Parse(txtMaKH.Text));
+                        QlyKhachHang_Load(sender, e);
+                        ClearTextBox();
+                        row = -1;
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    data.XoaKhachHang(int.Parse(txtMaKH.Text));
-                    QlyKhachHang_Load(sender, e);
-                    ClearTextBox();
+                    if (ex.Message.Contains("FK_HoaDon_KhachHang"))
+                    {
+                        MessageBox.Show("Không thể xóa khách hàng đã có đơn hàng mua", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

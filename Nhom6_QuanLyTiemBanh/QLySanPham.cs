@@ -54,6 +54,8 @@ namespace Nhom6_QuanLyTiemBanh
                 txtSoLuongCo.Text = dgvSanPham.Rows[row].Cells[2].Value.ToString();
                 txtDonGia.Text = dgvSanPham.Rows[row].Cells[3].Value.ToString();
                 cbbLoaiSP.SelectedValue = dgvSanPham.Rows[row].Cells[4].Value.ToString();
+                dtpHSD.Text= dgvSanPham.Rows[row].Cells[6].Value.ToString();
+                dtpNgaySX.Text= dgvSanPham.Rows[row].Cells[5].Value.ToString();
             }
         }
 
@@ -76,9 +78,16 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()));
+                if(dtpHSD.Value< dtpNgaySX.Value)
+                {
+                    MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
                 QLySanPham_Load(sender, e);
                 ClearTextBox();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (FormatException ex)
             {
@@ -111,9 +120,15 @@ namespace Nhom6_QuanLyTiemBanh
                         MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()));
+                    if (dtpHSD.Value < dtpNgaySX.Value)
+                    {
+                        MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
+                    MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -143,6 +158,7 @@ namespace Nhom6_QuanLyTiemBanh
                     data.XoaSanPham(int.Parse(txtMaSP.Text));
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }   
             }
             catch (Exception ex)

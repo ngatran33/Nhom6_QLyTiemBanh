@@ -28,15 +28,15 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             return table;
         }
 
-        public void ThemSanPham(String tenSP, int soLuongCo, double gia, int maLoaiSP)
+        public void ThemSanPham(String tenSP, int soLuongCo, double gia, int maLoaiSP, DateTime sx, DateTime hsd)
         {
-            String sql = "Insert into SanPham Values (N'" + tenSP + "', " + soLuongCo + ", " + gia + ", " + maLoaiSP + ")";
+            String sql = "Insert into SanPham Values (N'" + tenSP + "', " + soLuongCo + ", " + gia + ", " + maLoaiSP +",'"+sx+"','"+ hsd+ "')";
             dataConn.ExecuteNonQuery(sql);
         }
 
-        public void SuaTaiKhoan(int maSP, String tenSP, int soLuongCo, double gia, int maLoaiSP)
+        public void SuaTaiKhoan(int maSP, String tenSP, int soLuongCo, double gia, int maLoaiSP, DateTime sx, DateTime hsd)
         {
-            String sql = "Update SanPham Set TenSp=N'" + tenSP + "', Slco=" + soLuongCo + ", Gia=" + gia + ", MaLoaiSP=" + maLoaiSP + " where MaSP=" + maSP + "";
+            String sql = "Update SanPham Set TenSp=N'" + tenSP + "', Slco=" + soLuongCo + ", Gia=" + gia + ", MaLoaiSP=" + maLoaiSP + ", NgaySX='"+sx+"', HSD='"+hsd+ "' where MaSP=" + maSP + "";
             dataConn.ExecuteNonQuery(sql);
         }
 

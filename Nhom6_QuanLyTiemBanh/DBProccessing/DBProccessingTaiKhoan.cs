@@ -108,5 +108,46 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             else
                 return false;
         }
+
+        public bool checkTenDN(String ten)
+        {
+            String sql = "SELECT * FROM TaiKhoan WHERE TenDangNhap='" + ten + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkSDT(String sdt)
+        {
+            String sql = "SELECT * FROM TaiKhoan WHERE SoDT_nv='" + sdt + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkTenDN(String ten, int ma)// check khi cap nhật
+        {
+            String sql = "SELECT * FROM TaiKhoan WHERE TenDangNhap='" + ten + "' and MaTk NOT IN ("+ ma+")" ;
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkSDT(String sdt, int ma)// check khi cập nhật
+        {
+            String sql = "SELECT * FROM TaiKhoan WHERE SoDT_nv='" + sdt + "' and MaTk NOT IN (" + ma + ")";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

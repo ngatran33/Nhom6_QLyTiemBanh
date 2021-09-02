@@ -80,6 +80,16 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Họ tên không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (data.checkTenDN(txtTenDangNhap.Text))
+                {
+                    MessageBox.Show("Tên đăng nhập đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (data.checkSDT(txtSoDienThoai.Text))
+                {
+                    MessageBox.Show("Số điện thoại đã có", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 String gt;
                 if (rdbNam.Checked)
                     gt = "Nam";
@@ -89,6 +99,7 @@ namespace Nhom6_QuanLyTiemBanh
                 data.ThemTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 NhanVien_Load(sender, e);
                 ClearTextBox();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException ex)
             {
@@ -121,6 +132,16 @@ namespace Nhom6_QuanLyTiemBanh
                         MessageBox.Show("Họ tên không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    if (data.checkTenDN(txtTenDangNhap.Text, int.Parse(txtMaTaiKhoan.Text)))
+                    {
+                        MessageBox.Show("Tên đăng nhập đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (data.checkSDT(txtSoDienThoai.Text, int.Parse(txtMaTaiKhoan.Text)))
+                    {
+                        MessageBox.Show("Số điện thoại đã có", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     String gt;
                     if (rdbNam.Checked)
                         gt = "Nam";
@@ -130,6 +151,7 @@ namespace Nhom6_QuanLyTiemBanh
                     data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                     NhanVien_Load(sender, e);
                     ClearTextBox();
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -156,6 +178,8 @@ namespace Nhom6_QuanLyTiemBanh
                     data.XoaTaiKhoan(int.Parse(txtMaTaiKhoan.Text));
                     NhanVien_Load(sender, e);
                     ClearTextBox();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 else
                 {

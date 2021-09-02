@@ -12,6 +12,7 @@ namespace Nhom6_QuanLyTiemBanh
 {
     public partial class NhaCungCap : Form
     {
+        int row = -1;
         DBProccessing.DBProccessingNhaCungCap data = new DBProccessing.DBProccessingNhaCungCap();
         public NhaCungCap()
         {
@@ -42,9 +43,15 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Số điện thoại không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (data.checkSDT(txtSoDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 data.ThemNhaCungCap(txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
                 NhaCungCap_Load(sender, e);
                 ClearTextBox();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException)
             {
@@ -76,7 +83,7 @@ namespace Nhom6_QuanLyTiemBanh
         private void dgvNhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaNCC.Enabled = true;
-            int row = e.RowIndex;
+            row = e.RowIndex;
             if (row >= 0)
             {
                 txtMaNCC.Text = dgvNhaCC.Rows[row].Cells[0].Value.ToString();
@@ -88,57 +95,82 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            try
+            if (row != -1)
             {
+                try
+                {
 
-                if (txtTenNCC.Text == "")
-                {
-                    MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (txtTenNCC.Text == "")
+                    {
+                        MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtDiaChi.Text == "")
+                    {
+                        MessageBox.Show("Địa chỉ nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtSoDT.Text == "")
+                    {
+                        MessageBox.Show("Số điện thoại nhà cung cấp khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (data.checkSDT(txtSoDT.Text, int.Parse(txtMaNCC.Text)))
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    data.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
+                    NhaCungCap_Load(sender, e);
+                    ClearTextBox();
+                    row = -1;
+                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (txtDiaChi.Text == "")
+                catch (FormatException)
                 {
-                    MessageBox.Show("Địa chỉ nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (txtSoDT.Text == "")
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Số điện thoại nhà cung cấp khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                data.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
-                NhaCungCap_Load(sender, e);
-                ClearTextBox();
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chọn dòng để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+            if (row != -1)
             {
-                if (txtMaNCC.Text == null)
+                try
                 {
-                    MessageBox.Show("Chọn khách hàng cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (txtMaNCC.Text == null)
+                    {
+                        MessageBox.Show("Chọn khách hàng cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        data.XoaNhaCungCap(int.Parse(txtMaNCC.Text));
+                        NhaCungCap_Load(sender, e);
+                        ClearTextBox();
+                        row = -1;
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    data.XoaNhaCungCap(int.Parse(txtMaNCC.Text));
-                    NhaCungCap_Load(sender, e);
-                    ClearTextBox();
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

@@ -54,5 +54,25 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             else
                 return false;
         }
+        public bool checkSDT(String sdt, int ma)// check khi cập nhật
+        {
+            String sql = "SELECT * FROM NhaCungCap WHERE SoDT='" + sdt + "' and MaNCC NOT IN (" + ma + ")";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkSDT(String sdt)// check khi cập nhật
+        {
+            String sql = "SELECT * FROM NhaCungCap WHERE SoDT='" + sdt + "'";
+            DataTable table = dataConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
