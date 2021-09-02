@@ -72,13 +72,13 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-            
+
                 if (txtHoTen.Text == "")
                 {
                     MessageBox.Show("Họ tên khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if(txtDiaChi.Text == "")
+                if (txtDiaChi.Text == "")
                 {
                     MessageBox.Show("Địa chỉ khách hàng không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -106,7 +106,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             txtMaKH.Enabled = true;
             int row = e.RowIndex;
-            if(row >= 0)
+            if (row >= 0)
             {
                 txtMaKH.Text = dgvKhachHang.Rows[row].Cells[0].Value.ToString();
                 txtHoTen.Text = dgvKhachHang.Rows[row].Cells[1].Value.ToString();
@@ -136,8 +136,6 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
-<<<<<<< Updated upstream
-=======
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
@@ -173,7 +171,5 @@ namespace Nhom6_QuanLyTiemBanh
         {
 
         }
-
->>>>>>> Stashed changes
     }
 }

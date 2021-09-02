@@ -164,9 +164,9 @@
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnHienThi);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(0, 234);
+            this.groupBox2.Location = new System.Drawing.Point(0, 228);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(797, 55);
+            this.groupBox2.Size = new System.Drawing.Size(797, 64);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lựa chọn";
@@ -175,7 +175,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(537, 25);
+            this.label6.Location = new System.Drawing.Point(537, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 16);
             this.label6.TabIndex = 14;
@@ -184,7 +184,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(648, 23);
+            this.txtTimKiem.Location = new System.Drawing.Point(646, 29);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(126, 22);
             this.txtTimKiem.TabIndex = 9;
@@ -192,131 +192,69 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            this.btnThem.Location = new System.Drawing.Point(163, 15);
+            this.btnThem.Location = new System.Drawing.Point(161, 25);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 34);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            this.btnSua.Location = new System.Drawing.Point(251, 15);
+            this.btnSua.Location = new System.Drawing.Point(250, 23);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 34);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            this.btnTimKiem.Location = new System.Drawing.Point(427, 15);
+            this.btnTimKiem.Location = new System.Drawing.Point(428, 23);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 34);
             this.btnTimKiem.TabIndex = 8;
             this.btnTimKiem.Text = "Tìm";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            this.btnXoa.Location = new System.Drawing.Point(339, 15);
+            this.btnXoa.Location = new System.Drawing.Point(339, 23);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 34);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHienThi
             // 
             this.btnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
             this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienThi.Location = new System.Drawing.Point(60, 15);
+            this.btnHienThi.Location = new System.Drawing.Point(57, 23);
             this.btnHienThi.Name = "btnHienThi";
             this.btnHienThi.Size = new System.Drawing.Size(90, 34);
             this.btnHienThi.TabIndex = 4;
             this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-=======
-=======
->>>>>>> Stashed changes
-            this.btnHienThi.Location = new System.Drawing.Point(75, 15);
-            this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(75, 34);
-            this.btnHienThi.TabIndex = 4;
-            this.btnHienThi.Text = "Hiển thị";
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             this.btnHienThi.UseVisualStyleBackColor = true;
             this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
@@ -334,7 +272,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(797, 196);
+            this.groupBox1.Size = new System.Drawing.Size(797, 190);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cũng cấp";
@@ -342,7 +280,7 @@
             // txtSoDT
             // 
             this.txtSoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDT.Location = new System.Drawing.Point(212, 157);
+            this.txtSoDT.Location = new System.Drawing.Point(212, 148);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(560, 22);
             this.txtSoDT.TabIndex = 3;
@@ -350,7 +288,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(212, 116);
+            this.txtDiaChi.Location = new System.Drawing.Point(212, 110);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(560, 22);
             this.txtDiaChi.TabIndex = 2;
@@ -358,7 +296,7 @@
             // txtTenNCC
             // 
             this.txtTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(212, 75);
+            this.txtTenNCC.Location = new System.Drawing.Point(212, 72);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(560, 22);
             this.txtTenNCC.TabIndex = 1;
@@ -376,7 +314,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 163);
+            this.label5.Location = new System.Drawing.Point(54, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 0;
@@ -386,7 +324,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 120);
+            this.label4.Location = new System.Drawing.Point(54, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 16);
             this.label4.TabIndex = 0;
@@ -396,7 +334,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 77);
+            this.label3.Location = new System.Drawing.Point(54, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 0;
@@ -406,7 +344,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 34);
+            this.label2.Location = new System.Drawing.Point(54, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 0;
@@ -419,7 +357,7 @@
             this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.panel1);
             this.Name = "NhaCungCap";
-            this.Text = "NhaCungCap";
+            this.Text = "Nhà cung cấp";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
