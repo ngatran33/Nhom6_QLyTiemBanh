@@ -36,7 +36,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             dbConn.ExecuteNonQuery(sql);
         }
 
-        public void insertctHDN(int sp, int masp, int sl, int gia, int tong)
+        public void insertctHDN(int sp, int masp, int sl, double gia, double tong)
         {
             String sql = "INSERT INTO ChiTietHoaDonNhap VALUES (" + sp + ", " + masp+ ", " + sl + ", " + gia + ", " + tong + ")";
             dbConn.ExecuteNonQuery(sql);
@@ -52,6 +52,26 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         {
             string sql = "UPDATE SanPHam Set Slco=SLco+ " + sl + " WHERE MaSP=" + masp;
             dbConn.ExecuteNonQuery(sql);
+        }
+        public bool checkTenNCC(string ten)
+        {
+            String sql = "Select * from NhaCungCap where TenNcc= N'" + ten + "'";
+            DataTable table = dbConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkTenSP(string ten)
+        {
+            String sql = "Select * from SanPham where TenSP= N'" + ten + "'";
+            DataTable table = dbConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

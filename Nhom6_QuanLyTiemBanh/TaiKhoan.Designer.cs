@@ -37,15 +37,14 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.BackColor = System.Drawing.Color.YellowGreen;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ThongTinCaNhanToolStripMenuItem,
             this.QuanLyNhanVienToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1179, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1048, 31);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -53,7 +52,7 @@
             // 
             this.ThongTinCaNhanToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThongTinCaNhanToolStripMenuItem.Name = "ThongTinCaNhanToolStripMenuItem";
-            this.ThongTinCaNhanToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
+            this.ThongTinCaNhanToolStripMenuItem.Size = new System.Drawing.Size(162, 27);
             this.ThongTinCaNhanToolStripMenuItem.Text = "Thông tin cá nhân";
             this.ThongTinCaNhanToolStripMenuItem.Click += new System.EventHandler(this.ThongTinCaNhanToolStripMenuItem_Click);
             // 
@@ -61,26 +60,26 @@
             // 
             this.QuanLyNhanVienToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuanLyNhanVienToolStripMenuItem.Name = "QuanLyNhanVienToolStripMenuItem";
-            this.QuanLyNhanVienToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
+            this.QuanLyNhanVienToolStripMenuItem.Size = new System.Drawing.Size(161, 27);
             this.QuanLyNhanVienToolStripMenuItem.Text = "Quản lý nhân viên";
             this.QuanLyNhanVienToolStripMenuItem.Click += new System.EventHandler(this.QuanLyNhanVienToolStripMenuItem_Click);
             // 
             // panelTaiKhoan
             // 
             this.panelTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 38);
-            this.panelTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 31);
             this.panelTaiKhoan.Name = "panelTaiKhoan";
-            this.panelTaiKhoan.Size = new System.Drawing.Size(1179, 822);
+            this.panelTaiKhoan.Size = new System.Drawing.Size(1048, 657);
             this.panelTaiKhoan.TabIndex = 2;
             // 
             // TaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 860);
+            this.ClientSize = new System.Drawing.Size(1048, 688);
             this.Controls.Add(this.panelTaiKhoan);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TaiKhoan";
             this.Text = "TaiKhoan";
             this.Load += new System.EventHandler(this.TaiKhoan_Load);

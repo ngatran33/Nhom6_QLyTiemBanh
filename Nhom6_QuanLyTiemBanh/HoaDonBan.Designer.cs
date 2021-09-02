@@ -151,11 +151,11 @@
             this.cbbKH.Name = "cbbKH";
             this.cbbKH.Size = new System.Drawing.Size(200, 28);
             this.cbbKH.TabIndex = 5;
+            this.cbbKH.Click += new System.EventHandler(this.click);
             // 
             // dtpNgayLap
             // 
             this.dtpNgayLap.CustomFormat = "yyyy/MM/dd";
-            this.dtpNgayLap.Enabled = false;
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayLap.Location = new System.Drawing.Point(160, 170);
             this.dtpNgayLap.Name = "dtpNgayLap";
@@ -246,6 +246,8 @@
             // 
             // cbbSP
             // 
+            this.cbbSP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbSP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSP.FormattingEnabled = true;
@@ -383,7 +385,7 @@
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongTien.Location = new System.Drawing.Point(917, 22);
+            this.lblTongTien.Location = new System.Drawing.Point(793, 10);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(18, 20);
             this.lblTongTien.TabIndex = 1;
@@ -394,7 +396,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(829, 22);
+            this.label2.Location = new System.Drawing.Point(705, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 0;
@@ -485,8 +487,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvSP;
-        private System.Windows.Forms.ComboBox cbbKH;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label10;
@@ -506,5 +506,7 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnhdban;
+        public System.Windows.Forms.ComboBox cbbKH;
+        private System.Windows.Forms.DataGridView dgvSP;
     }
 }

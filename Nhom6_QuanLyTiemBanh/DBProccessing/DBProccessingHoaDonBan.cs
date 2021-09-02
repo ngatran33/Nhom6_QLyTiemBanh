@@ -44,7 +44,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             DataTable table = dbConn.GetTable(sql);
             return int.Parse(table.Rows[0][0].ToString());
         }
-        public void insertCTHD(int masp, int sl, int tong)
+        public void insertCTHD(int masp, int sl, double tong)
         {
             string sql = "INSERT INTO ChiTietHoaDon VALUES( " + getMaHDMoiThem() + "," + masp + "," + sl + "," + tong + ")";
             dbConn.ExecuteNonQuery(sql);
@@ -54,15 +54,20 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             String sql="UPDATE SanPham Set Slco= Slco-"+sl+ " WHERE MaSP=" + masp;
             dbConn.ExecuteNonQuery(sql);
         }
-        public DataTable getKHTimKiem(String s)
-        {
-            string sql = "SELECT * FROM KhachHang WHERE TenKH LIKE N'%" + s + "%'";
-            return dbConn.GetTable(sql);
-        }
         public bool checkTenKH(string ten)
         {
             string sql = "SELECT * FROM KhachHang WHERE TenKH = N'" + ten + "'";
             DataTable table= dbConn.GetTable(sql);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool checkTenSP(string tenSP)
+        {
+            string sql = "SELECT * FROM SanPham WHERE TenSP = N'" + tenSP + "'";
+            DataTable table = dbConn.GetTable(sql);
             if (table.Rows.Count > 0)
             {
                 return true;

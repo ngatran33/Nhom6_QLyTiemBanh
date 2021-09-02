@@ -348,6 +348,7 @@
             this.ClientSize = new System.Drawing.Size(1140, 702);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChiTietHoaDonBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietHoaDonBan";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_close);
             this.Load += new System.EventHandler(this.ChiTietHoaDonBan_Load);

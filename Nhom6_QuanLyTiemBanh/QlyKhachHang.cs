@@ -67,5 +67,6 @@ namespace Nhom6_QuanLyTiemBanh
             txtSoDT.Clear();
             ActiveControl = txtHoTen;
         }
+
     }
 }

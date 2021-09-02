@@ -35,6 +35,11 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnThemSp_Click(object sender, EventArgs e)
         {
+            if (!obj.checkTenSP(cbbSP.Text))
+            {
+                MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             try
             {
                 if (txtSL.Text.Equals("") || txtDG.Text.Equals(""))
@@ -45,7 +50,7 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (UInt32.Parse(txtDG.Text) == 0)
+                else if (double.Parse(txtDG.Text) <= 0)
                 {
                     MessageBox.Show("Hãy nhập đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -54,7 +59,7 @@ namespace Nhom6_QuanLyTiemBanh
                     String masp = cbbSP.SelectedValue.ToString();
                     String tensp = cbbSP.Text;
                     String sl = txtSL.Text;
-                    String donG = txtDG.Text;
+                    String donG = txtDG.Text+"000";
                     String thanhTien = txtThanhTien.Text;
                     if (dgvDsachSP.Rows.Count > 0)
                     {
@@ -74,7 +79,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Số lượng và đơn giá phải là số nguyên lơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng phải là số nguyên, đơn giá phải là số thực", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -90,7 +95,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                txtThanhTien.Text = ""+(UInt32.Parse(txtSL.Text) * UInt32.Parse(txtDG.Text));
+                txtThanhTien.Text =(UInt32.Parse(txtSL.Text) * double.Parse(txtDG.Text))+"000";
             }
             catch
             {
@@ -102,7 +107,7 @@ namespace Nhom6_QuanLyTiemBanh
         {
             try
             {
-                txtThanhTien.Text = "" + (UInt32.Parse(txtSL.Text) * UInt32.Parse(txtDG.Text));
+                txtThanhTien.Text = (UInt32.Parse(txtSL.Text) * double.Parse(txtDG.Text))+"000";
             }
             catch
             {
@@ -121,23 +126,37 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
-            if (index != -1)
+            if (dgvDsachSP.Rows.Count > 0)
             {
-                if(MessageBox.Show("Bạn chắc chắn muốn xóa dòng "+ (index +1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (index != -1)
                 {
-                    dgvDsachSP.Rows.RemoveAt(index);
-                    cleartxt();
-                    tinhtong();
+                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvDsachSP.Rows.RemoveAt(index);
+                        cleartxt();
+                        tinhtong();
+                    }
+                    index = -1;
                 }
-                index = -1;
-            }else
-            {
-                MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+            else
+            {
+                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void btnLapHD_Click(object sender, EventArgs e)
         {
+            if (!obj.checkTenNCC(cbbNCC.Text))
+            {
+                MessageBox.Show("Nhà cung cấp không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if(MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -151,8 +170,8 @@ namespace Nhom6_QuanLyTiemBanh
                             int sopn =int.Parse(txtSPN.Text);
                             int masp =int.Parse(row.Cells[0].Value.ToString());
                             int sl =int.Parse(row.Cells[2].Value.ToString());
-                            int dg =int.Parse(row.Cells[3].Value.ToString());
-                            int thanhtien =int.Parse(row.Cells[4].Value.ToString());
+                            double dg =double.Parse(row.Cells[3].Value.ToString());
+                            double thanhtien =double.Parse(row.Cells[4].Value.ToString());
                             obj.insertctHDN(sopn, masp, sl, dg, thanhtien);
                             obj.upDateSl(masp, sl);
                         }
@@ -191,18 +210,55 @@ namespace Nhom6_QuanLyTiemBanh
         {
             if (dgvDsachSP.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvDsachSP.Rows)
+                if (index != -1)
                 {
-                    if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
+                    if (!obj.checkTenSP(cbbSP.Text))
                     {
-                        row.Cells[2].Value = txtSL.Text;
-                        row.Cells[3].Value = txtDG.Text;
-                        row.Cells[4].Value = txtThanhTien.Text;
-                        tinhtong();
-                        cleartxt();
+                        MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+                    try
+                    {
+                        if (txtSL.Text.Equals("") || txtDG.Text.Equals(""))
+                        {
+                            MessageBox.Show("Nhập đủ dữ liệu vào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (UInt32.Parse(txtSL.Text) == 0)
+                        {
+                            MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (double.Parse(txtDG.Text) <= 0)
+                        {
+                            MessageBox.Show("Hãy nhập đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            foreach (DataGridViewRow row in dgvDsachSP.Rows)
+                            {
+                                if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
+                                {
+                                    row.Cells[2].Value = txtSL.Text;
+                                    row.Cells[3].Value = txtDG.Text;
+                                    row.Cells[4].Value = double.Parse(txtThanhTien.Text) / 1000;
+                                    tinhtong();
+                                    cleartxt();
+                                    index = -1;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                 }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn dòng để sửa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
             else
             {
@@ -214,12 +270,12 @@ namespace Nhom6_QuanLyTiemBanh
         {
             if (dgvDsachSP.Rows.Count > 0)
             {
-                int tong = 0;
+                double tong = 0;
                 foreach (DataGridViewRow row in dgvDsachSP.Rows)
                 {
-                    tong += int.Parse(row.Cells[4].Value.ToString());
+                    tong += double.Parse(row.Cells[4].Value.ToString());
                 }
-                lblTongTien.Text = tong + ".0000 VND";
+                lblTongTien.Text = tong + "VND";
             }
         }
     }

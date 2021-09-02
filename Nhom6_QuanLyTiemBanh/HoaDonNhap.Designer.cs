@@ -102,7 +102,8 @@
             // 
             // cbbNCC
             // 
-            this.cbbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNCC.FormattingEnabled = true;
             this.cbbNCC.Location = new System.Drawing.Point(133, 102);
@@ -216,6 +217,8 @@
             // 
             // cbbSP
             // 
+            this.cbbSP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbSP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSP.FormattingEnabled = true;
