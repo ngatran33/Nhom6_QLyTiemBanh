@@ -178,7 +178,7 @@ namespace Nhom6_QuanLyTiemBanh
             {
                 try
                 {//int masp, int sl, int tong
-                    obj.insertHD(int.Parse(cbbKH.SelectedValue.ToString()), dtpNgayLap.Value);
+                    obj.insertHD(int.Parse(cbbKH.SelectedValue.ToString()), String.Format("{0:yyyy/MM/dd}", dtpNgayLap.Value));
                     txtMaHD.Text = obj.getMaHDMoiThem() + "";
                     if (dgvSP.Rows.Count > 0)
                     {

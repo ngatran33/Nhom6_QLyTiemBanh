@@ -126,27 +126,34 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
-            if (dgvDsachSP.Rows.Count > 0)
+            try
             {
-                if (index != -1)
+                if (dgvDsachSP.Rows.Count > 0)
                 {
-                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                        == DialogResult.Yes)
+                    if (index != -1)
                     {
-                        dgvDsachSP.Rows.RemoveAt(index);
-                        cleartxt();
-                        tinhtong();
+                        if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                            == DialogResult.Yes)
+                        {
+                            dgvDsachSP.Rows.RemoveAt(index);
+                            cleartxt();
+                            tinhtong();
+                        }
+                        index = -1;
                     }
-                    index = -1;
+                    else
+                    {
+                        MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch( Exception ex)
             {
-                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -162,7 +169,7 @@ namespace Nhom6_QuanLyTiemBanh
             {
                 try
                 {//(int sp, int masp, int sl, int gia, int tong)
-                    obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(TrangChu.tt), dtpNgayLap.Value);
+                    obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(TrangChu.tt), String.Format("{0:yyyy/MM/dd}", dtpNgayLap.Value));
                     txtSPN.Text = obj.getspn();
                     if (dgvDsachSP.Rows.Count > 0)
                     {

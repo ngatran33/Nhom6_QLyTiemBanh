@@ -30,7 +30,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             DataTable table = dbConn.GetTable(sql);
             return table;
         }
-        public void insertHDN(int mancc, int maTk, DateTime ngay)
+        public void insertHDN(int mancc, int maTk, String ngay)
         {
             String sql="INSERT INTO HoaDonNhap VALUES (" + mancc + ", " + maTk + ", '" + ngay + "')";
             dbConn.ExecuteNonQuery(sql);

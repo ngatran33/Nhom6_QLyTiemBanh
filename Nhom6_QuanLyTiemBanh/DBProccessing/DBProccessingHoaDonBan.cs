@@ -33,7 +33,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
             DataTable table = dbConn.GetTable(sql);
             return int.Parse(table.Rows[0][0].ToString());
         }
-        public void insertHD(int maKh, DateTime nl)
+        public void insertHD(int maKh, String nl)
         {
             string sql = "INSERT INTO HoaDon VALUES(" + maKh + ",'" + nl + "')";
             dbConn.ExecuteNonQuery(sql);
