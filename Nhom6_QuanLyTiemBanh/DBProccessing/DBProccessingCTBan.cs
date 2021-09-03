@@ -23,7 +23,7 @@ namespace Nhom6_QuanLyTiemBanh.DBProccessing
         }
         public DataTable getSp(int MaHD)
         {
-            string sql = " SELECT s.MaSP, TenSP, Gia, Slco, TongTien" +
+            string sql = " SELECT s.MaSP, TenSP, Gia, SoLuongBan, TongTien" +
                 " FROM ChiTietHoaDon h INNER JOIN SanPham s ON h.MaSP= s.MaSP" +
                 " WHERE MaHD= " + MaHD;
             return dbConn.GetTable(sql);

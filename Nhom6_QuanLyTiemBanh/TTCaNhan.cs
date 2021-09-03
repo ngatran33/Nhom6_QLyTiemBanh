@@ -84,7 +84,8 @@ namespace Nhom6_QuanLyTiemBanh
                 else
                     gt = "Nữ";
 
-                data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
+                data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, 
+                    ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 TTCaNhan_Load(sender, e);
                 MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -38,7 +38,8 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn nhâp có SoPN là: " + sopn, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn nhâp có SoPN là: " + sopn, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                        == DialogResult.Yes)
                     {
                         obj.deleteHDN(sopn);
                         DanhSachHoaDon_Load(sender, e);

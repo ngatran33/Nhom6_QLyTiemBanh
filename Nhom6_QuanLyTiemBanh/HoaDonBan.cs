@@ -146,7 +146,8 @@ namespace Nhom6_QuanLyTiemBanh
             {
                 if (index != -1)
                 {
-                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
+                        == DialogResult.Yes)
                     {
                         dgvSP.Rows.RemoveAt(index);
                         tinhtong();

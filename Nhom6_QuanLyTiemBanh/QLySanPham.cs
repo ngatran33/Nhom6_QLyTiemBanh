@@ -83,7 +83,8 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
+                data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), 
+                    int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
                 QLySanPham_Load(sender, e);
                 ClearTextBox();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,7 +126,8 @@ namespace Nhom6_QuanLyTiemBanh
                         MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
+                    data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text),
+                        int.Parse(cbbLoaiSP.SelectedValue.ToString()), dtpNgaySX.Value, dtpHSD.Value);
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
                     MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

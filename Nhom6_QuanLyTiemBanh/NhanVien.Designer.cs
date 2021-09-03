@@ -258,7 +258,6 @@
             this.btnTimKiemTheoTen.Size = new System.Drawing.Size(337, 41);
             this.btnTimKiemTheoTen.TabIndex = 12;
             this.btnTimKiemTheoTen.Text = "Tìm kiếm theo họ tên";
-            this.btnTimKiemTheoTen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiemTheoTen.UseVisualStyleBackColor = true;
             this.btnTimKiemTheoTen.Click += new System.EventHandler(this.btnTimKiemTheoTen_Click);
             // 

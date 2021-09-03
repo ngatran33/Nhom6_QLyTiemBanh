@@ -96,7 +96,8 @@ namespace Nhom6_QuanLyTiemBanh
                 else
                     gt = "Nữ";
 
-                data.ThemTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
+                data.ThemTaiKhoan(txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, 
+                    txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 NhanVien_Load(sender, e);
                 ClearTextBox();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,7 +149,8 @@ namespace Nhom6_QuanLyTiemBanh
                     else
                         gt = "Nữ";
 
-                    data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
+                    data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, ckbTinhTrang.Checked ? true : false, 
+                        txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                     NhanVien_Load(sender, e);
                     ClearTextBox();
                     MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
