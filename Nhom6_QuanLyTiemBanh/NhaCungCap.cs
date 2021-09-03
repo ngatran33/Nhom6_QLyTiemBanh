@@ -82,7 +82,6 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void dgvNhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaNCC.Enabled = true;
             row = e.RowIndex;
             if (row >= 0)
             {

@@ -30,14 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNgayLap = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtDC = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.Label();
@@ -74,34 +72,21 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 346F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1140, 702);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1134, 344);
+            this.panel1.Size = new System.Drawing.Size(1134, 340);
             this.panel1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1498, 309);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Chi tiết hóa đơn";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
             // 
@@ -165,17 +150,6 @@
             this.label12.Size = new System.Drawing.Size(66, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "Mã HĐ:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1374, 309);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Chi tiết hóa đơn";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
@@ -255,9 +229,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dgvDsachHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 353);
+            this.panel2.Location = new System.Drawing.Point(3, 349);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1134, 346);
+            this.panel2.Size = new System.Drawing.Size(1134, 350);
             this.panel2.TabIndex = 1;
             // 
             // lblTongTien
@@ -265,7 +239,7 @@
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongTien.Location = new System.Drawing.Point(919, 302);
+            this.lblTongTien.Location = new System.Drawing.Point(955, 302);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(18, 20);
             this.lblTongTien.TabIndex = 2;
@@ -287,7 +261,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(818, 302);
+            this.label1.Location = new System.Drawing.Point(854, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 1;
@@ -296,6 +270,7 @@
             // dgvDsachHang
             // 
             this.dgvDsachHang.AllowUserToAddRows = false;
+            this.dgvDsachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvDsachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDsachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
@@ -303,7 +278,7 @@
             this.Gia,
             this.SoLuongBan,
             this.TongTien});
-            this.dgvDsachHang.Location = new System.Drawing.Point(3, 44);
+            this.dgvDsachHang.Location = new System.Drawing.Point(13, 51);
             this.dgvDsachHang.Name = "dgvDsachHang";
             this.dgvDsachHang.RowTemplate.Height = 24;
             this.dgvDsachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -374,13 +349,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvDsachHang;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label txtNgayLap;
         private System.Windows.Forms.Label txtMaHD;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtDC;
         private System.Windows.Forms.Label txtSDT;
         private System.Windows.Forms.Label txtTenKH;

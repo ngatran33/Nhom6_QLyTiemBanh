@@ -126,7 +126,6 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaKH.Enabled = true;
             row = e.RowIndex;
             if (row >= 0)
             {

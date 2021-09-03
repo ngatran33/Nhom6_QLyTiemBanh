@@ -19,6 +19,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void ManChinh_Load(object sender, EventArgs e)
         {
+            label3.BackColor = Color.FromArgb(100, 204, 204, 204);
         }
     }
 }

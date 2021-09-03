@@ -126,5 +126,11 @@ namespace Nhom6_QuanLyTiemBanh
                 this.Close();
             }
         }
+
+        private void mnuTrangChu_Click(object sender, EventArgs e)
+        {
+            ManChinh fm = new ManChinh();
+            AddForm(fm);
+        }
     }
 }
