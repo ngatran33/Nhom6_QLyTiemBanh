@@ -50,6 +50,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btn_xuat = new System.Windows.Forms.Button();
             this.dgvDsachHang = new System.Windows.Forms.DataGridView();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +61,6 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btn_xuat = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -311,6 +311,34 @@
             this.panel2.Size = new System.Drawing.Size(1134, 328);
             this.panel2.TabIndex = 1;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::Nhom6_QuanLyTiemBanh.Properties.Resources.Logout1;
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(858, 175);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(212, 66);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btn_xuat
+            // 
+            this.btn_xuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xuat.Image = global::Nhom6_QuanLyTiemBanh.Properties.Resources.pdf_Format;
+            this.btn_xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xuat.Location = new System.Drawing.Point(858, 68);
+            this.btn_xuat.Name = "btn_xuat";
+            this.btn_xuat.Size = new System.Drawing.Size(209, 66);
+            this.btn_xuat.TabIndex = 4;
+            this.btn_xuat.Text = "Xuất file pdf";
+            this.btn_xuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
+            // 
             // dgvDsachHang
             // 
             this.dgvDsachHang.AllowUserToAddRows = false;
@@ -390,28 +418,6 @@
             this.label18.Size = new System.Drawing.Size(213, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "Danh sách sản phẩm Nhập:";
-            // 
-            // btn_xuat
-            // 
-            this.btn_xuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xuat.Location = new System.Drawing.Point(903, 68);
-            this.btn_xuat.Name = "btn_xuat";
-            this.btn_xuat.Size = new System.Drawing.Size(164, 66);
-            this.btn_xuat.TabIndex = 4;
-            this.btn_xuat.Text = "Xuất file pdf";
-            this.btn_xuat.UseVisualStyleBackColor = true;
-            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(906, 175);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(164, 66);
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // ChiTietHoaDonNhap
             // 

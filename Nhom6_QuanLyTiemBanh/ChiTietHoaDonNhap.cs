@@ -111,6 +111,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell2.PaddingBottom = 20;
                         table.AddCell(pdfPCell2);
 
+                        //số phiếu
                         PdfPCell pCell1 = new PdfPCell(new Phrase("Số PN: "+ lblSoPN.Text, font));
                         pCell1.Colspan = 2;
                         pCell1.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -118,6 +119,8 @@ namespace Nhom6_QuanLyTiemBanh
                         pCell1.PaddingBottom = 10;
                         table.AddCell(pCell1);
 
+
+                        //ngày lập
                         PdfPCell pCell2 = new PdfPCell(new Phrase("Ngày Lập: " + lblNgayLap.Text, font));
                         pCell2.Colspan = 2;
                         pCell2.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -125,7 +128,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pCell2.PaddingBottom = 10;
                         table.AddCell(pCell2);
 
-                        //tên kh:
+                        //Thong tin
                         PdfPCell pdfPCell3 = new PdfPCell(new Phrase("Thông tin nhà cung cấp", font));
                         pdfPCell3.Colspan = 1;
                         pdfPCell3.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -134,7 +137,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell3.PaddingLeft = 20;
                         table.AddCell(pdfPCell3);
 
-                        //mã hóa đơn:
+                        //thông tin
                         PdfPCell pdfPCell4 = new PdfPCell(new Phrase("Thông tin nhân viên", font));
                         pdfPCell4.Colspan = 1;
                         pdfPCell4.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -143,7 +146,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell4.PaddingLeft = 20;
                         table.AddCell(pdfPCell4);
 
-                        //sdt:
+                        //tên ncc
                         PdfPCell pdfPCell5 = new PdfPCell(new Phrase("Tên NCC: " + lblTenNcc.Text, font));
                         pdfPCell5.Colspan = 1;
                         pdfPCell5.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -152,7 +155,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell5.PaddingLeft = 20;
                         table.AddCell(pdfPCell5);
 
-                        //ngay lap:
+                        //tên nv
                         PdfPCell pdfPCell6 = new PdfPCell(new Phrase("Tên NV:  " + lblHotenNv.Text, font));
                         pdfPCell6.Colspan = 1;
                         pdfPCell6.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -161,7 +164,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell6.PaddingLeft = 20;
                         table.AddCell(pdfPCell6);
 
-                        //địa chỉ
+                        //sdt ncc
                         PdfPCell pdfPCell7 = new PdfPCell(new Phrase("SĐT:  " + lblSDTNcc.Text, font));
                         pdfPCell7.Colspan = 1;
                         pdfPCell7.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -170,7 +173,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell7.PaddingLeft = 20;
                         table.AddCell(pdfPCell7);
 
-                        //
+                        //sdt nv
                         PdfPCell pdfPCell8 = new PdfPCell(new Phrase("SĐT:  " + lblSdtNv.Text, font));
                         pdfPCell8.Colspan = 1;
                         pdfPCell8.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -179,7 +182,7 @@ namespace Nhom6_QuanLyTiemBanh
                         pdfPCell8.PaddingLeft = 20;
                         table.AddCell(pdfPCell8);
 
-                        //
+                        //dia chi ncc
                         PdfPCell pdfPCell9 = new PdfPCell(new Phrase("Địa chỉ:  " + lblDCNCC.Text, font));
                         pdfPCell9.Colspan = 1;
                         pdfPCell9.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -189,7 +192,7 @@ namespace Nhom6_QuanLyTiemBanh
                         table.AddCell(pdfPCell9);
 
 
-                        //
+                        //địa chỉ nhân viên
                         PdfPCell pdfPCell1 = new PdfPCell(new Phrase("Địa chỉ:  " + lblDcNv.Text, font));
                         pdfPCell1.Colspan = 1;
                         pdfPCell1.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -210,7 +213,7 @@ namespace Nhom6_QuanLyTiemBanh
                         table.AddCell(pCell3);
 
 
-                        //bảng san phẩm
+                        //bảng sản phẩm
                         PdfPTable tableHang = new PdfPTable(dgvDsachHang.ColumnCount);
                         float[] columnsWidth1 = { 1, 2, 1.5f, 1, 1.5f };
                         tableHang.SetWidths(columnsWidth1);
@@ -228,7 +231,7 @@ namespace Nhom6_QuanLyTiemBanh
                             tableHang.AddCell(pdf);
                         }
 
-                        //thêm dl cho bẩng
+                        //thêm dl cho bảng
                         foreach (DataGridViewRow row in dgvDsachHang.Rows)
                         {
                             foreach (DataGridViewCell cell in row.Cells)

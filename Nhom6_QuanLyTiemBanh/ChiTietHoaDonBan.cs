@@ -172,7 +172,7 @@ namespace Nhom6_QuanLyTiemBanh
                         table.AddCell(pdfPCell8);
 
 
-                        //bảng san phẩm
+                        //bảng sản phẩm
                         PdfPTable tableHang = new PdfPTable(dgvDsachHang.ColumnCount);
                         float[] columnsWidth1 = { 1, 2, 1.5f, 1, 1.5f };
                         tableHang.SetWidths(columnsWidth1);
@@ -190,7 +190,7 @@ namespace Nhom6_QuanLyTiemBanh
                             tableHang.AddCell(pdf);
                         }
 
-                        //thêm dl cho bẩng
+                        //thêm dl cho bảng
                         foreach (DataGridViewRow row in dgvDsachHang.Rows)
                         {
                             foreach (DataGridViewCell cell in row.Cells)
