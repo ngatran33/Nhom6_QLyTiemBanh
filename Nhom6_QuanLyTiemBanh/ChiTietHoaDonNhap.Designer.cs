@@ -59,6 +59,8 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btn_xuat = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -297,6 +299,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnThoat);
+            this.panel2.Controls.Add(this.btn_xuat);
             this.panel2.Controls.Add(this.dgvDsachHang);
             this.panel2.Controls.Add(this.lblTongTien);
             this.panel2.Controls.Add(this.label19);
@@ -359,7 +363,7 @@
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongTien.Location = new System.Drawing.Point(907, 270);
+            this.lblTongTien.Location = new System.Drawing.Point(898, 287);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(18, 20);
             this.lblTongTien.TabIndex = 2;
@@ -370,7 +374,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(774, 270);
+            this.label19.Location = new System.Drawing.Point(765, 287);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(87, 20);
             this.label19.TabIndex = 1;
@@ -386,6 +390,28 @@
             this.label18.Size = new System.Drawing.Size(213, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "Danh sách sản phẩm Nhập:";
+            // 
+            // btn_xuat
+            // 
+            this.btn_xuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xuat.Location = new System.Drawing.Point(903, 68);
+            this.btn_xuat.Name = "btn_xuat";
+            this.btn_xuat.Size = new System.Drawing.Size(164, 66);
+            this.btn_xuat.TabIndex = 4;
+            this.btn_xuat.Text = "Xuất file pdf";
+            this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(906, 175);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(164, 66);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // ChiTietHoaDonNhap
             // 
@@ -445,5 +471,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btn_xuat;
     }
 }

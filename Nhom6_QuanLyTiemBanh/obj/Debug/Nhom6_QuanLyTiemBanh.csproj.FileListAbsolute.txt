@@ -81,3 +81,7 @@ D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTi
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.QlyKhachHang.resources
 D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ManChinh.resources
 C:\Users\DonNguyenVan\OneDrive\Documents\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.ManChinh.resources
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\BouncyCastle.Crypto.dll
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\itextsharp.dll
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\bin\Debug\itextsharp.xml
+D:\HOCTAP\GitHub\Nhom6_QLyTiemBanh\Nhom6_QuanLyTiemBanh\obj\Debug\Nhom6_QuanLyTiemBanh.csproj.CopyComplete

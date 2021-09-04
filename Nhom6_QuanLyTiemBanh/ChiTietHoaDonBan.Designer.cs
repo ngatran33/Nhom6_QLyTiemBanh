@@ -44,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnxuat = new System.Windows.Forms.Button();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnxuat = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -225,6 +226,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnThoat);
             this.panel2.Controls.Add(this.btnxuat);
             this.panel2.Controls.Add(this.lblTongTien);
             this.panel2.Controls.Add(this.label3);
@@ -235,6 +237,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1134, 350);
             this.panel2.TabIndex = 1;
+            // 
+            // btnxuat
+            // 
+            this.btnxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxuat.Location = new System.Drawing.Point(926, 64);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(145, 70);
+            this.btnxuat.TabIndex = 3;
+            this.btnxuat.Text = "Xuất file pdf";
+            this.btnxuat.UseVisualStyleBackColor = true;
+            this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
             // lblTongTien
             // 
@@ -318,16 +331,16 @@
             this.TongTien.HeaderText = "Thành tiền";
             this.TongTien.Name = "TongTien";
             // 
-            // btnxuat
+            // btnThoat
             // 
-            this.btnxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxuat.Location = new System.Drawing.Point(926, 119);
-            this.btnxuat.Name = "btnxuat";
-            this.btnxuat.Size = new System.Drawing.Size(145, 70);
-            this.btnxuat.TabIndex = 3;
-            this.btnxuat.Text = "Xuất file pdf";
-            this.btnxuat.UseVisualStyleBackColor = true;
-            this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(926, 204);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(145, 67);
+            this.btnThoat.TabIndex = 4;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // ChiTietHoaDonBan
             // 
@@ -382,5 +395,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.Button btnxuat;
+        private System.Windows.Forms.Button btnThoat;
     }
 }
