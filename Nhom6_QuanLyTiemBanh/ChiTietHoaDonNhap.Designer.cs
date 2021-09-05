@@ -53,14 +53,14 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btn_xuat = new System.Windows.Forms.Button();
             this.dgvDsachHang = new System.Windows.Forms.DataGridView();
+            this.lblTongTien = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTongTien = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -356,36 +356,6 @@
             this.dgvDsachHang.Size = new System.Drawing.Size(784, 203);
             this.dgvDsachHang.TabIndex = 3;
             // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã SP";
-            this.MaSP.Name = "MaSP";
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên SP";
-            this.TenSP.Name = "TenSP";
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "GiaNhap";
-            this.Gia.HeaderText = "Đơn Giá";
-            this.Gia.Name = "Gia";
-            // 
-            // SoLuongBan
-            // 
-            this.SoLuongBan.DataPropertyName = "SoLuongNhap";
-            this.SoLuongBan.HeaderText = "Số lượng";
-            this.SoLuongBan.Name = "SoLuongBan";
-            // 
-            // TongTien
-            // 
-            this.TongTien.DataPropertyName = "TongTienNhap";
-            this.TongTien.HeaderText = "Thành tiền";
-            this.TongTien.Name = "TongTien";
-            // 
             // lblTongTien
             // 
             this.lblTongTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -418,6 +388,37 @@
             this.label18.Size = new System.Drawing.Size(213, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "Danh sách sản phẩm Nhập:";
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã SP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên SP";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 150;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "GiaNhap";
+            this.Gia.HeaderText = "Đơn Giá";
+            this.Gia.Name = "Gia";
+            // 
+            // SoLuongBan
+            // 
+            this.SoLuongBan.DataPropertyName = "SoLuongNhap";
+            this.SoLuongBan.HeaderText = "Số lượng";
+            this.SoLuongBan.Name = "SoLuongBan";
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTienNhap";
+            this.TongTien.HeaderText = "Thành tiền";
+            this.TongTien.Name = "TongTien";
             // 
             // ChiTietHoaDonNhap
             // 
@@ -472,12 +473,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView dgvDsachHang;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btn_xuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btn_xuat;
     }
 }
