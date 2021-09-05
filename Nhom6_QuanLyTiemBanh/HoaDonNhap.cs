@@ -20,6 +20,7 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void HoaDonNhap_Load(object sender, EventArgs e)
         {
             cbbNCC.DataSource = obj.getNCC();
@@ -33,29 +34,32 @@ namespace Nhom6_QuanLyTiemBanh
            
         }
 
+        //thêm san phẩm vào bảng
         private void btnThemSp_Click(object sender, EventArgs e)
         {
+            //ktra dl nhập vào
             if (!obj.checkTenSP(cbbSP.Text))
             {
-                MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sản Phẩm không tồn tại!", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
             {
                 if (txtSL.Text.Equals("") || txtDG.Text.Equals(""))
                 {
-                    MessageBox.Show("Nhập đủ dữ liệu vào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Nhập đủ dữ liệu vào!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (UInt32.Parse(txtSL.Text) == 0)
                 {
-                    MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Hãy nhập số lượng lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (double.Parse(txtDG.Text) <= 0)
                 {
-                    MessageBox.Show("Hãy nhập đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Hãy nhập đơn giá lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
+                    //thêm sản phâm vào dgv
                     String masp = cbbSP.SelectedValue.ToString();
                     String tensp = cbbSP.Text;
                     String sl = txtSL.Text;
@@ -67,7 +71,7 @@ namespace Nhom6_QuanLyTiemBanh
                         {
                             if (masp.Equals(row.Cells[0].Value.ToString()))
                             {
-                                MessageBox.Show("Mặt hàng này đã có", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Mặt hàng này đã có!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -79,11 +83,12 @@ namespace Nhom6_QuanLyTiemBanh
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Số lượng phải là số nguyên, đơn giá phải là số thực", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng phải là số nguyên, đơn giá phải là số thực!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
 
+        //xoa trang
         private void cleartxt()
         {
             txtDG.Clear();
@@ -91,6 +96,7 @@ namespace Nhom6_QuanLyTiemBanh
             txtThanhTien.Clear();
         }
 
+        //tinh thanh tien
         private void sl_textchanged(object sender, EventArgs e)
         {
             try
@@ -103,6 +109,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tinh thanh tien
         private void donGia_textChanged(object sender, EventArgs e)
         {
             try
@@ -115,6 +122,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //cell click
         private void dgvSP_cellclick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
@@ -124,6 +132,7 @@ namespace Nhom6_QuanLyTiemBanh
             txtThanhTien.Text =dgvDsachSP.Rows[index].Cells[4].Value.ToString();
         }
 
+        //xóa sp khoi dgv
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
             try
@@ -132,7 +141,7 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     if (index != -1)
                     {
-                        if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                        if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1)+"?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                             == DialogResult.Yes)
                         {
                             dgvDsachSP.Rows.RemoveAt(index);
@@ -143,12 +152,12 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     else
                     {
-                        MessageBox.Show("Bạn cần chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Bạn cần chọn dòng để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Danh sách trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch( Exception ex)
@@ -158,21 +167,24 @@ namespace Nhom6_QuanLyTiemBanh
             
         }
 
+        //lap hoa don- them vao csdl
         private void btnLapHD_Click(object sender, EventArgs e)
         {
             if (!obj.checkTenNCC(cbbNCC.Text))
             {
-                MessageBox.Show("Nhà cung cấp không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nhà cung cấp không tồn tại!", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("Vui lòng kiểm tra kỹ thông tin trước khi lập hóa đơn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
-                {//(int sp, int masp, int sl, int gia, int tong)
+                {
+                    //thêm dl vào bảng hdn
                     obj.insertHDN(int.Parse(cbbNCC.SelectedValue.ToString()), int.Parse(TrangChu.tt), String.Format("{0:yyyy/MM/dd}", dtpNgayLap.Value));
                     txtSPN.Text = obj.getspn();
                     if (dgvDsachSP.Rows.Count > 0)
                     {
+                        //thêm chi tiet hoa don
                         foreach(DataGridViewRow row in dgvDsachSP.Rows)
                         {
                             int sopn =int.Parse(txtSPN.Text);
@@ -183,9 +195,11 @@ namespace Nhom6_QuanLyTiemBanh
                             obj.insertctHDN(sopn, masp, sl, dg, thanhtien);
                             obj.upDateSl(masp, sl);
                         }
-                        MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lập hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvDsachSP.Rows.Clear();
                         lblTongTien.Text = "0";
+
+                        //chuyen man
                         ChiTietHoaDonNhap.sopn = int.Parse(txtSPN.Text);
                         ChiTietHoaDonNhap fm = new ChiTietHoaDonNhap();
                         fm.Show();
@@ -193,7 +207,7 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     else
                     {
-                        MessageBox.Show("Hay chọn hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Hay chọn hàng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                    
                 }
@@ -205,21 +219,24 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        // hủy hóa đơn
         private void btnHuyHD_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn nhập", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn nhập?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dgvDsachSP.Rows.Clear();
                 cleartxt();
             }
         }
 
+        //sửa dòng sản phẩm trong dgv
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvDsachSP.Rows.Count > 0)
             {
-                if (index != -1)
+                if (index != -1)//ktra đã chọn dòng sửa chưa
                 {
+                    // ktra dl nhập vào
                     if (!obj.checkTenSP(cbbSP.Text))
                     {
                         MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -229,15 +246,15 @@ namespace Nhom6_QuanLyTiemBanh
                     {
                         if (txtSL.Text.Equals("") || txtDG.Text.Equals(""))
                         {
-                            MessageBox.Show("Nhập đủ dữ liệu vào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Nhập đủ dữ liệu vào!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (UInt32.Parse(txtSL.Text) == 0)
                         {
-                            MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Hãy nhập số lượng lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (double.Parse(txtDG.Text) <= 0)
                         {
-                            MessageBox.Show("Hãy nhập đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Hãy nhập đơn giá lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
@@ -258,22 +275,23 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Bạn cần chọn dòng để sửa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn cần chọn dòng để sửa! ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
             }
             else
             {
-                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Danh sách trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
+        //tinh tong tien của hóa don
         private void tinhtong()
         {
             if (dgvDsachSP.Rows.Count > 0)

@@ -18,16 +18,19 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void NhanVien_Load(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = data.ShowNhanVien();
         }
 
+        //hien thị
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = data.ShowNhanVien();
         }
 
+        //xóa trắng
         private void ClearTextBox()
         {
             txtMaTaiKhoan.Clear();
@@ -39,6 +42,7 @@ namespace Nhom6_QuanLyTiemBanh
             ActiveControl = txtMaTaiKhoan;
         }
 
+        //cell click
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
@@ -61,28 +65,30 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //them nhan vien
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
+                //ktr dl nhập vào
                 if (txtTenDangNhap.Text == "")
                 {
-                    MessageBox.Show("Tên đăng nhập không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên đăng nhập không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtMatKhau.Text == "")
                 {
-                    MessageBox.Show("Mật khẩu không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mật khẩu không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtHoTen.Text == "")
                 {
-                    MessageBox.Show("Họ tên không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Họ tên không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (data.checkTenDN(txtTenDangNhap.Text))
                 {
-                    MessageBox.Show("Tên đăng nhập đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên đăng nhập đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (data.checkSDT(txtSoDienThoai.Text))
@@ -90,6 +96,7 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Số điện thoại đã có", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                //thêm
                 String gt;
                 if (rdbNam.Checked)
                     gt = "Nam";
@@ -100,11 +107,11 @@ namespace Nhom6_QuanLyTiemBanh
                     txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 NhanVien_Load(sender, e);
                 ClearTextBox();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -112,37 +119,40 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //cập nhật nhân viên
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
             {
+                //ktra dl nhập vào
                 if(txtMaTaiKhoan.Text != "")
                 {
                     if (txtTenDangNhap.Text == "")
                     {
-                        MessageBox.Show("Tên đăng nhập không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tên đăng nhập không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (txtMatKhau.Text == "")
                     {
-                        MessageBox.Show("Mật khẩu không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Mật khẩu không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (txtHoTen.Text == "")
                     {
-                        MessageBox.Show("Họ tên không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Họ tên không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (data.checkTenDN(txtTenDangNhap.Text, int.Parse(txtMaTaiKhoan.Text)))
                     {
-                        MessageBox.Show("Tên đăng nhập đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tên đăng nhập đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (data.checkSDT(txtSoDienThoai.Text, int.Parse(txtMaTaiKhoan.Text)))
                     {
-                        MessageBox.Show("Số điện thoại đã có", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Số điện thoại đã có!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    //cập nhật vào csdl
                     String gt;
                     if (rdbNam.Checked)
                         gt = "Nam";
@@ -153,17 +163,17 @@ namespace Nhom6_QuanLyTiemBanh
                         txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                     NhanVien_Load(sender, e);
                     ClearTextBox();
-                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Chọn nhân viên cần cập nhật", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chọn nhân viên cần cập nhật!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -171,6 +181,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -180,12 +191,12 @@ namespace Nhom6_QuanLyTiemBanh
                     data.XoaTaiKhoan(int.Parse(txtMaTaiKhoan.Text));
                     NhanVien_Load(sender, e);
                     ClearTextBox();
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
                 {
-                    MessageBox.Show("Chọn nhân viên cần xoá", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chọn nhân viên cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
@@ -194,13 +205,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tìm kiếm theo mã
         private void btnTimKiemTheoMa_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtTimKiem.Text == "")
                 {
-                    MessageBox.Show("Nhập mã tài khoản cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nhập mã tài khoản cần tìm vào ô tìm kiếm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 dgvNhanVien.DataSource = data.TimKiemTheoMaTK(int.Parse(txtTimKiem.Text));
                 if (data.checkMaTaiKhoanNhanVien(int.Parse(txtTimKiem.Text)))
@@ -209,7 +221,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy mã tài khoản của nhân viên", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy mã tài khoản của nhân viên!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -218,13 +230,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tìm kiếm theo tên
         private void btnTimKiemTheoTen_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtTimKiem.Text == "")
                 {
-                    MessageBox.Show("Nhập họ tên cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nhập họ tên cần tìm vào ô tìm kiếm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 dgvNhanVien.DataSource = data.TimKiemTheoHoTen(txtTimKiem.Text);
                 if (data.checkHoTenNhanVien(txtTimKiem.Text))
@@ -233,7 +246,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy họ tên của nhân viên", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy họ tên của nhân viên!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

@@ -23,6 +23,7 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void ChiTietHoaDonNhap_Load(object sender, EventArgs e)
         {
             if (sopn != -1)
@@ -53,19 +54,23 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //close
         private void form_close(object sender, FormClosingEventArgs e)
         {
             sopn = -1;
         }
 
+        //thoát
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chán muốn thoát.", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chán muốn thoát?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
         }
 
+
+        //xuat file
         private void btn_xuat_Click(object sender, EventArgs e)
         {
             if (sopn != -1)

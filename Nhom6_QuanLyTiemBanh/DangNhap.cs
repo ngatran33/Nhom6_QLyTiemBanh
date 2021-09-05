@@ -18,26 +18,18 @@ namespace Nhom6_QuanLyTiemBanh
         {
             InitializeComponent();
         }
-
-        private void dnbtnThoat_Click(object sender, EventArgs e)
-        {
-           if( MessageBox.Show("Bạn chắc chán muốn thoát", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-
+        //đăng nhập
         private void dkbtnDangNhap_Click(object sender, EventArgs e)
         {
             if(dnTxtMatKhau.Text.Length==0 || dnTxtTenDn.Text.Length == 0)
             {
-                MessageBox.Show("Không được để trống tên đăng nhập và tài khoản", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được để trống tên đăng nhập và tài khoản.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if(obj.checkTaiKhoan(dnTxtTenDn.Text, dnTxtMatKhau.Text)){
                     this.Hide();
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TrangChu.tt = obj.getMaTk(dnTxtTenDn.Text, dnTxtMatKhau.Text);
 
                     TrangChu fm = new TrangChu();
@@ -46,16 +38,28 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+       
+        
+        //xóa trắng
+        private void btnReset_Click(object sender, EventArgs e)
         {
             dnTxtMatKhau.Clear();
             dnTxtTenDn.Clear();
             dnTxtTenDn.Focus();
+        }
+
+        // thoát
+        private void lblThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chán muốn thoát?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

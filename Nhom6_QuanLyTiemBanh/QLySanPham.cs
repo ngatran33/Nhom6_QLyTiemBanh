@@ -18,6 +18,7 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void QLySanPham_Load(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = data.ShowSanPham();
@@ -27,6 +28,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         }
 
+        //hiển thị
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = data.ShowSanPham();
@@ -35,6 +37,7 @@ namespace Nhom6_QuanLyTiemBanh
             cbbLoaiSP.ValueMember = "MaLoaiSP";
         }
 
+        //xóa trắng
         private void ClearTextBox()
         {
             txtMaSP.Clear();
@@ -44,6 +47,7 @@ namespace Nhom6_QuanLyTiemBanh
             ActiveControl = txtMaSP;
         }
 
+        //cell click
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
@@ -59,41 +63,43 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //thêm sản phẩm
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
+                //ktra dl nhập vào
                 if (txtTenSP.Text == "")
                 {
-                    MessageBox.Show("Tên sản phẩm không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên sản phẩm không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (int.Parse(txtSoLuongCo.Text) < 0)
                 {
-                    MessageBox.Show("Số lượng có không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số lượng có không được âm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (double.Parse(txtDonGia.Text) <= 0)
                 {
-                    MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đơn giá không được âm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if(dtpHSD.Value< dtpNgaySX.Value)
                 {
-                    MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                MessageBox.Show(String.Format("{0:yyyy/MM/dd}", dtpNgaySX.Value), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //thêm tt sản phẩm vào csdl
                 data.ThemSanPham(txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text), 
                     int.Parse(cbbLoaiSP.SelectedValue.ToString()), String.Format("{0:yyyy/MM/dd}",dtpNgaySX.Value), String.Format("{0:yyyy/MM/dd}", dtpHSD.Value) );
                 QLySanPham_Load(sender, e);
                 ClearTextBox();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -101,46 +107,49 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //cập nhật tt sản phẩm
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
             {
+                // ktra dl nhập vào
                 if (txtMaSP.Text != "")
                 {
                     if (txtTenSP.Text == "")
                     {
-                        MessageBox.Show("Tên sản phẩm không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tên sản phẩm không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (int.Parse(txtSoLuongCo.Text) < 0)
                     {
-                        MessageBox.Show("Số lượng có không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Số lượng có không được âm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (double.Parse(txtDonGia.Text) <= 0)
                     {
-                        MessageBox.Show("Đơn giá không được âm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Đơn giá không được âm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     if (dtpHSD.Value < dtpNgaySX.Value)
                     {
-                        MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Kiểm tra ngày sản xuất và hạn sử dụng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    //cập nhật vào csdl
                     data.SuaTaiKhoan(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuongCo.Text), double.Parse(txtDonGia.Text),
                         int.Parse(cbbLoaiSP.SelectedValue.ToString()), String.Format("{0:yyyy/MM/dd}", dtpNgaySX.Value), String.Format("{0:yyyy/MM/dd}", dtpHSD.Value) );
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
-                    MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập Nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Chọn sản phẩm cần cập nhật", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chọn sản phẩm cần cập nhật!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -148,20 +157,21 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //xóa sản phẩm
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtMaSP.Text == "")
                 {
-                    MessageBox.Show("Chọn sản phẩm cần xoá", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                    MessageBox.Show("Chọn sản phẩm cần xoá!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);    
                 }
                 else
                 {
                     data.XoaSanPham(int.Parse(txtMaSP.Text));
                     QLySanPham_Load(sender, e);
                     ClearTextBox();
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }   
             }
             catch (Exception ex)
@@ -170,13 +180,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tìm kiếm theo mã sp
         private void btnTimKiemTheoMa_Click(object sender, EventArgs e)
         {
             try
             {
                 if(txtTimKiem.Text == null)
                 {
-                    MessageBox.Show("Nhập mã sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nhập mã sản phẩm cần tìm vào ô tìm kiếm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dgvSanPham.DataSource = data.TimKiemTheoMaSP(int.Parse(txtTimKiem.Text));
@@ -186,7 +197,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy mã sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy mã sản phẩm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
@@ -196,13 +207,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tìm kiếm theo tên
         private void btnTimKiemTheoTen_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtTimKiem.Text == null)
                 {
-                    MessageBox.Show("Nhập tên sản phẩm cần tìm vào ô tìm kiếm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nhập tên sản phẩm cần tìm vào ô tìm kiếm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dgvSanPham.DataSource = data.TimKiemTheoTenSP(txtTimKiem.Text);
@@ -212,7 +224,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy tên sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy tên sản phẩm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

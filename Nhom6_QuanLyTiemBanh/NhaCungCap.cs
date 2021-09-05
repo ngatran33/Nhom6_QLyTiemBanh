@@ -19,15 +19,18 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             dgvNhaCC.DataSource = data.ShowNhaCungCap();
         }
 
+        //them nha cung cap
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
+                // kiểm tra dl đầu vào
                 if (txtTenNCC.Text == "")
                 {
                     MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,13 +48,14 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 if (data.checkSDT(txtSoDT.Text))
                 {
-                    MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số điện thoại đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                //thêm dl vào csdl
                 data.ThemNhaCungCap(txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
                 NhaCungCap_Load(sender, e);
                 ClearTextBox();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException)
             {
@@ -65,6 +69,8 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //xoa trang
         private void ClearTextBox()
         {
             txtMaNCC.Clear();
@@ -75,11 +81,13 @@ namespace Nhom6_QuanLyTiemBanh
             txtMaNCC.Enabled = false;
         }
 
+        //hien thi
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             dgvNhaCC.DataSource = data.ShowNhaCungCap();
         }
 
+        //cell click
         private void dgvNhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = e.RowIndex;
@@ -92,13 +100,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //sua thong tin nha cc
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (row != -1)
             {
                 try
                 {
-
+                    //ktra dl nhập vào
                     if (txtTenNCC.Text == "")
                     {
                         MessageBox.Show("Tên nhà cung cấp không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,14 +125,15 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     if (data.checkSDT(txtSoDT.Text, int.Parse(txtMaNCC.Text)))
                     {
-                        MessageBox.Show("Số điện thoại đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Số điện thoại đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    //cập nhật lại dl
                     data.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text, txtDiaChi.Text, txtSoDT.Text);
                     NhaCungCap_Load(sender, e);
                     ClearTextBox();
                     row = -1;
-                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (FormatException)
                 {
@@ -136,11 +146,12 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Chọn dòng để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chọn dòng để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
 
+        //xóa nhà cc
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (row != -1)
@@ -157,7 +168,7 @@ namespace Nhom6_QuanLyTiemBanh
                         NhaCungCap_Load(sender, e);
                         ClearTextBox();
                         row = -1;
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
@@ -167,11 +178,12 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Chọn dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chọn dòng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
 
+        //tìm kiếm theo tên
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try

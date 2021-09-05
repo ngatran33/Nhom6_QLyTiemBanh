@@ -20,6 +20,7 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load csdl
         private void HoaDonBan_Load(object sender, EventArgs e)
         {
             cbbKH.DataSource = obj.getKhachHang();
@@ -31,6 +32,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         }
 
+        //lấy đơn giá
         private void cbbSP_textchanged(object sender, EventArgs e)
         {
             try
@@ -43,6 +45,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tính thành tiền
         private void sl_textchanged(object sender, EventArgs e)
         {
             try
@@ -57,33 +60,35 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //thêm sp vao bảng
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!obj.checkTenSP(cbbSP.Text))
             {
-                MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sản Phẩm không tồn tại!", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
             {
+                //check dl đầu vào
                 if (txtSL.Text.Equals(""))
                 {
-                    MessageBox.Show("Nhập đủ dữ liệu vào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Nhập đủ dữ liệu vào!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (UInt32.Parse(txtSL.Text) == 0)
                 {
-                    MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Hãy nhập số lượng lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (Double.Parse(txtDG.Text) <= 0)
                 {
-                    MessageBox.Show("Đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Đơn giá lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (UInt32.Parse(txtSL.Text) > obj.getSlCo(int.Parse(cbbSP.SelectedValue.ToString())))
                 {
-                    MessageBox.Show("Số lượng không đủ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số lượng không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                {
+                {//thêm dl vào bảng
                     String masp = cbbSP.SelectedValue.ToString();
                     String tensp = cbbSP.Text;
                     String sl = txtSL.Text;
@@ -95,7 +100,7 @@ namespace Nhom6_QuanLyTiemBanh
                         {
                             if (masp.Equals(row.Cells[0].Value.ToString()))
                             {
-                                MessageBox.Show("Mặt hàng này đã có", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Mặt hàng này đã có!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -107,10 +112,11 @@ namespace Nhom6_QuanLyTiemBanh
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        //tinh tong tien cua hd
         private void tinhtong()
         {
             if (dgvSP.Rows.Count > 0)
@@ -124,6 +130,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //xóa trắng
         private void cleartxt()
         {
             txtSL.Clear();
@@ -131,6 +138,7 @@ namespace Nhom6_QuanLyTiemBanh
             txtThanhTien.Text = "NaN";
         }
 
+        //hiển thi dl lên text
         private void dgv_cellclick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
@@ -140,13 +148,14 @@ namespace Nhom6_QuanLyTiemBanh
             txtThanhTien.Text = dgvSP.Rows[index].Cells[4].Value.ToString();
         }
 
+        //xóa sp khỏi bảng
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dgvSP.Rows.Count > 0)
             {
                 if (index != -1)
                 {
-                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1), "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
+                    if (MessageBox.Show("Bạn chắc chắn muốn xóa dòng " + (index + 1)+ "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
                         == DialogResult.Yes)
                     {
                         dgvSP.Rows.RemoveAt(index);
@@ -157,31 +166,34 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    MessageBox.Show("Chọn dòng để xóa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Chọn dòng để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Danh sách trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
 
+        //lập hóa đơn - thêm vào csdl
         private void btnLap_Click(object sender, EventArgs e)
         {
             if (!obj.checkTenKH(cbbKH.Text))
             {
-                MessageBox.Show("Khách hàng k tồn tại. Tạo mới khách hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Khách hàng không tồn tại. Tạo mới khách hàng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (MessageBox.Show("Kiểm trả thông tin", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Vui lòng kiểm tra kỹ các thông tin trước khi lập hóa đơn!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
-                {//int masp, int sl, int tong
+                {
+                    //thêm hóa đơn
                     obj.insertHD(int.Parse(cbbKH.SelectedValue.ToString()), String.Format("{0:yyyy/MM/dd}", dtpNgayLap.Value));
                     txtMaHD.Text = obj.getMaHDMoiThem() + "";
                     if (dgvSP.Rows.Count > 0)
                     {
+                        //thêm chi tiet hoa don
                         foreach (DataGridViewRow row in dgvSP.Rows)
                         {
                             int masp = int.Parse(row.Cells[0].Value.ToString());
@@ -190,9 +202,11 @@ namespace Nhom6_QuanLyTiemBanh
                             obj.insertCTHD(masp, sl, thanhtien);
                             obj.updateSLco(masp, sl);
                         }
-                        MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lập hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvSP.Rows.Clear();
                         lblTongTien.Text = "0";
+
+                        //chuyen màn
                         ChiTietHoaDonBan.mahd = obj.getMaHDMoiThem();
                         ChiTietHoaDonBan fm = new ChiTietHoaDonBan();
                         fm.Show();
@@ -200,7 +214,7 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     else
                     {
-                        MessageBox.Show("Hay chọn hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Hãy chọn hàng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -212,6 +226,7 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //tính thành tiền
         private void dg_textchange(object sender, EventArgs e)
         {
             try
@@ -226,15 +241,17 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //hủy hóa đơn
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dgvSP.Rows.Clear();
                 cleartxt();
             }
         }
 
+        //sửa sản phẩm
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvSP.Rows.Count > 0)
@@ -243,29 +260,30 @@ namespace Nhom6_QuanLyTiemBanh
                 {
                     if (!obj.checkTenSP(cbbSP.Text))
                     {
-                        MessageBox.Show("Sản Phẩm không tồn tại", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Sản Phẩm không tồn tại!", "Cảnh cáo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     try
                     {
+                        //kiểm tra dl nhập vào
                         if (txtSL.Text.Equals(""))
                         {
-                            MessageBox.Show("Nhập đủ dữ liệu vào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Nhập đủ dữ liệu vào!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (UInt32.Parse(txtSL.Text) == 0)
                         {
-                            MessageBox.Show("Hãy nhập số lượng lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Hãy nhập số lượng lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (Double.Parse(txtDG.Text) <= 0)
                         {
-                            MessageBox.Show("Đơn giá lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Đơn giá lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (UInt32.Parse(txtSL.Text) > obj.getSlCo(int.Parse(cbbSP.SelectedValue.ToString())))
                         {
-                            MessageBox.Show("Số lượng không đủ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Số lượng không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
-                        {
+                        {// cập nhật lại dl
                             foreach (DataGridViewRow row in dgvSP.Rows)
                             {
                                 if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
@@ -282,28 +300,29 @@ namespace Nhom6_QuanLyTiemBanh
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Số lượng phải là số nguyên lơn 0, đơn giá phải là số thực lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 
                 else
                 {
-                    MessageBox.Show("Bạn cần chọn dòng để sửa ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn cần chọn dòng để sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Danh sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Danh sách trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
+        //chuyển màn
         private void btnhdban_Click(object sender, EventArgs e)
         {
             QlyKhachHang f = new QlyKhachHang();
             f.Show();
         }
 
-
+        //load lại kh sau khi thêm
         private void click(object sender, EventArgs e)
         {
             HoaDonBan_Load(sender, e);

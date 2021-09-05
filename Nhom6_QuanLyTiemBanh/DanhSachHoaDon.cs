@@ -21,12 +21,15 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void DanhSachHoaDon_Load(object sender, EventArgs e)
         {
             dgvHDN.DataSource = obj.getHDN();
             dgvHoaDOn.DataSource = obj.getHD();
         }
 
+
+        //xóa hóa đơn nhập
         private void btnXoaHDN_Click(object sender, EventArgs e)
         {
             if (dgv_hdn_row != -1)
@@ -38,7 +41,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn nhâp có SoPN là: " + sopn, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn nhâp có SoPN là: " + sopn+"?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                         == DialogResult.Yes)
                     {
                         obj.deleteHDN(sopn);
@@ -49,16 +52,18 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Bạn cần chọn hóa đơn nhập muốn xóa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn cần chọn hóa đơn nhập muốn xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        //cell click
         private void dgv_HDN_cellclick(object sender, DataGridViewCellEventArgs e)
         {
             dgv_hdn_row = e.RowIndex;
             
         }
 
+        //xem hóa đơn nhập
         private void btnXemCTHDN_Click(object sender, EventArgs e)
         {
             if (dgv_hdn_row != -1)
@@ -70,15 +75,17 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Bạn cần chọn hóa đơn nhập", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn cần chọn hóa đơn nhập!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        //cell click
         private void dgv_hd_cellclick(object sender, DataGridViewCellEventArgs e)
         {
             dgv_hd_row = e.RowIndex;
         }
 
+        //xóa hd bán
         private void btnxoaHD_Click(object sender, EventArgs e)
         {
             if (dgv_hd_row != -1)
@@ -90,7 +97,7 @@ namespace Nhom6_QuanLyTiemBanh
                 }
                 else
                 {
-                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn bán có MaHD là: " + mahd, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn chắc chắn xóa hóa đơn bán có MaHD là: " + mahd + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         obj.deleteHD(mahd);
                         DanhSachHoaDon_Load(sender, e);
@@ -100,10 +107,11 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xóa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        //xem hóa đơn bán
         private void btnXemCTHD_Click(object sender, EventArgs e)
         {
             if (dgv_hd_row != -1)
@@ -115,10 +123,11 @@ namespace Nhom6_QuanLyTiemBanh
             }
             else
             {
-                MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xem", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn cần chọn hóa đơn bán muốn xem!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        //tìm kiếm hd bán
         private void text_changed_makh(object sender, EventArgs e)
         {
             if (!txttimMA.Text.Equals(""))
@@ -131,12 +140,14 @@ namespace Nhom6_QuanLyTiemBanh
             }
         }
 
+        //xóa trắng
         private void btnXoa_Click(object sender, EventArgs e)
         {
             txttimMA.Clear();
             txtTimPhieu.Clear();
         }
 
+        //tìm kiếm hd Nhập
         private void text_changed_Nhap(object sender, EventArgs e)
         {
             if (!txtTimPhieu.Text.Equals(""))

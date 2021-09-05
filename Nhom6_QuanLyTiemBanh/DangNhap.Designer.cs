@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dnbtnThoat = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.lblThoat = new System.Windows.Forms.Label();
             this.dnTxtMatKhau = new System.Windows.Forms.TextBox();
             this.dnTxtTenDn = new System.Windows.Forms.TextBox();
             this.dkbtnDangNhap = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Purple;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(197, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 32);
@@ -71,8 +71,8 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dnbtnThoat);
+            this.panel1.Controls.Add(this.btnReset);
+            this.panel1.Controls.Add(this.lblThoat);
             this.panel1.Controls.Add(this.dnTxtMatKhau);
             this.panel1.Controls.Add(this.dnTxtTenDn);
             this.panel1.Controls.Add(this.dkbtnDangNhap);
@@ -84,26 +84,29 @@
             this.panel1.Size = new System.Drawing.Size(518, 368);
             this.panel1.TabIndex = 2;
             // 
-            // label5
+            // btnReset
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Nhập lại.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(91, 279);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(112, 42);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // dnbtnThoat
+            // lblThoat
             // 
-            this.dnbtnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dnbtnThoat.Location = new System.Drawing.Point(297, 288);
-            this.dnbtnThoat.Name = "dnbtnThoat";
-            this.dnbtnThoat.Size = new System.Drawing.Size(131, 40);
-            this.dnbtnThoat.TabIndex = 6;
-            this.dnbtnThoat.Text = "Thoát";
-            this.dnbtnThoat.UseVisualStyleBackColor = true;
-            this.dnbtnThoat.Click += new System.EventHandler(this.dnbtnThoat_Click);
+            this.lblThoat.AutoSize = true;
+            this.lblThoat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoat.ForeColor = System.Drawing.Color.Red;
+            this.lblThoat.Location = new System.Drawing.Point(423, 337);
+            this.lblThoat.Name = "lblThoat";
+            this.lblThoat.Size = new System.Drawing.Size(51, 20);
+            this.lblThoat.TabIndex = 7;
+            this.lblThoat.Text = "Thoát";
+            this.lblThoat.Click += new System.EventHandler(this.lblThoat_Click);
             // 
             // dnTxtMatKhau
             // 
@@ -122,14 +125,14 @@
             this.dnTxtTenDn.Name = "dnTxtTenDn";
             this.dnTxtTenDn.Size = new System.Drawing.Size(271, 27);
             this.dnTxtTenDn.TabIndex = 4;
-            this.dnTxtTenDn.Text = "nga";
+            this.dnTxtTenDn.Text = "thu";
             // 
             // dkbtnDangNhap
             // 
             this.dkbtnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dkbtnDangNhap.Location = new System.Drawing.Point(79, 288);
+            this.dkbtnDangNhap.Location = new System.Drawing.Point(273, 279);
             this.dkbtnDangNhap.Name = "dkbtnDangNhap";
-            this.dkbtnDangNhap.Size = new System.Drawing.Size(152, 42);
+            this.dkbtnDangNhap.Size = new System.Drawing.Size(139, 42);
             this.dkbtnDangNhap.TabIndex = 3;
             this.dkbtnDangNhap.Text = "Đăng Nhập";
             this.dkbtnDangNhap.UseVisualStyleBackColor = true;
@@ -198,8 +201,8 @@
         private System.Windows.Forms.Button dkbtnDangNhap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button dnbtnThoat;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblThoat;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

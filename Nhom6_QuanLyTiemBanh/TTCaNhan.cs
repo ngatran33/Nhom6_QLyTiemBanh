@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 
 
 namespace Nhom6_QuanLyTiemBanh
@@ -21,6 +20,7 @@ namespace Nhom6_QuanLyTiemBanh
             InitializeComponent();
         }
 
+        //load
         private void TTCaNhan_Load(object sender, EventArgs e)
         {
             table = data.getThongTinCaNhan(int.Parse(TrangChu.tt));
@@ -40,6 +40,7 @@ namespace Nhom6_QuanLyTiemBanh
                 rdbNu.Checked = true;
         }
 
+        //hien thi
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             table = data.getThongTinCaNhan(int.Parse(TrangChu.tt));
@@ -59,25 +60,28 @@ namespace Nhom6_QuanLyTiemBanh
                 rdbNu.Checked = true;
         }
 
+        //cap nhat
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             try
             {
+                //ktra dl nhập vào
                 if (txtTenDangNhap.Text == "")
                 {
-                    MessageBox.Show("Tên đăng nhập không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên đăng nhập không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtMatKhau.Text == "")
                 {
-                    MessageBox.Show("Mật khẩu không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mật khẩu không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (txtHoTen.Text == "")
                 {
-                    MessageBox.Show("Họ tên không được để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Họ tên không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                //cập nhật lại dl
                 String gt;
                 if (rdbNam.Checked)
                     gt = "Nam";
@@ -87,11 +91,11 @@ namespace Nhom6_QuanLyTiemBanh
                 data.SuaTaiKhoan(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text, 
                     ckbTinhTrang.Checked ? true : false, txtHoTen.Text, txtDiaChi.Text, txtSoDienThoai.Text, gt);
                 TTCaNhan_Load(sender, e);
-                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Nhập dữ liệu sai định dạng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập dữ liệu sai định dạng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

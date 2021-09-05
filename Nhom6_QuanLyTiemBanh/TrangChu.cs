@@ -26,7 +26,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void mnuThoat_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn chắc chán muốn thoát.", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("Bạn chắc chán muốn thoát?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
             }
@@ -34,7 +34,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chán muốn thoát.", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chán muốn thoát?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
             }
@@ -118,7 +118,7 @@ namespace Nhom6_QuanLyTiemBanh
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chán muốn đăng xuất.", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chán muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 DangNhap fm = new DangNhap();
