@@ -82,9 +82,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.29382F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.70618F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 599);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.35514F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.64486F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1056, 642);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -98,7 +98,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 453);
+            this.panel1.Size = new System.Drawing.Size(1050, 422);
             this.panel1.TabIndex = 0;
             // 
             // label7
@@ -106,7 +106,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(584, 47);
+            this.label7.Location = new System.Drawing.Point(601, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 20);
             this.label7.TabIndex = 8;
@@ -116,7 +116,7 @@
             // 
             this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(727, 44);
+            this.txtTimKiem.Location = new System.Drawing.Point(744, 58);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(187, 26);
@@ -127,7 +127,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(334, 5);
+            this.label1.Location = new System.Drawing.Point(356, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 29);
             this.label1.TabIndex = 2;
@@ -143,7 +143,7 @@
             this.groupBox2.Controls.Add(this.btnHienThi);
             this.groupBox2.Controls.Add(this.btnTimKiemTheoMa);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(550, 86);
+            this.groupBox2.Location = new System.Drawing.Point(575, 129);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -250,7 +250,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 86);
+            this.groupBox1.Location = new System.Drawing.Point(52, 47);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -397,13 +397,13 @@
             this.NgaySx,
             this.HSD});
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSanPham.Location = new System.Drawing.Point(3, 459);
+            this.dgvSanPham.Location = new System.Drawing.Point(3, 428);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 62;
             this.dgvSanPham.RowTemplate.Height = 28;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(1007, 138);
+            this.dgvSanPham.Size = new System.Drawing.Size(1050, 212);
             this.dgvSanPham.TabIndex = 1;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
@@ -461,7 +461,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 599);
+            this.ClientSize = new System.Drawing.Size(1056, 642);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QLySanPham";

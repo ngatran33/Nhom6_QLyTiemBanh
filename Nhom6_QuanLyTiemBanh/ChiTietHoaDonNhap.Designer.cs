@@ -149,11 +149,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(478, 6);
+            this.label1.Location = new System.Drawing.Point(420, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 25);
+            this.label1.Size = new System.Drawing.Size(235, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Hóa Đơn Nhập";
+            this.label1.Text = "Chi Tiết Hóa Đơn Nhập";
             // 
             // groupBox2
             // 

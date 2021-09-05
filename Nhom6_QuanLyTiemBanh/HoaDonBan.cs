@@ -200,7 +200,7 @@ namespace Nhom6_QuanLyTiemBanh
                             int sl = int.Parse(row.Cells[2].Value.ToString());
                             double thanhtien = double.Parse(row.Cells[4].Value.ToString());
                             obj.insertCTHD(masp, sl, thanhtien);
-                            obj.updateSLco(masp, sl);
+                            obj.updateSLco(sl, masp);
                         }
                         MessageBox.Show("Lập hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvSP.Rows.Clear();
