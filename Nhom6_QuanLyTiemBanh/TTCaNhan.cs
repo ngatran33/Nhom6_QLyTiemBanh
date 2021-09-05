@@ -81,6 +81,16 @@ namespace Nhom6_QuanLyTiemBanh
                     MessageBox.Show("Họ tên không được để trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (data.checkTenDN(txtTenDangNhap.Text, int.Parse(txtMaTaiKhoan.Text)))
+                {
+                    MessageBox.Show("Tên đăng nhập đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (data.checkSDT(txtSoDienThoai.Text, int.Parse(txtMaTaiKhoan.Text)))
+                {
+                    MessageBox.Show("Số điện thoại đã có!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 //cập nhật lại dl
                 String gt;
                 if (rdbNam.Checked)

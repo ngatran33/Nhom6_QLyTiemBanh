@@ -91,9 +91,9 @@ namespace Nhom6_QuanLyTiemBanh
         //xoa trang
         private void cleartxt()
         {
-            txtDG.Clear();
+            txtDG.Text = "0";
+            txtThanhTien.Text = "NaN";
             txtSL.Clear();
-            txtThanhTien.Clear();
         }
 
         //tinh thanh tien
@@ -128,7 +128,7 @@ namespace Nhom6_QuanLyTiemBanh
             index = e.RowIndex;
             cbbSP.SelectedValue = dgvDsachSP.Rows[index].Cells[0].Value.ToString();
             txtSL.Text = dgvDsachSP.Rows[index].Cells[2].Value.ToString();
-            txtDG.Text = dgvDsachSP.Rows[index].Cells[3].Value.ToString();
+            txtDG.Text =double.Parse( dgvDsachSP.Rows[index].Cells[3].Value.ToString())/1000 +"";
             txtThanhTien.Text =dgvDsachSP.Rows[index].Cells[4].Value.ToString();
         }
 
@@ -225,6 +225,7 @@ namespace Nhom6_QuanLyTiemBanh
             if (MessageBox.Show("Bạn chắc chắn hủy hóa đơn nhập?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dgvDsachSP.Rows.Clear();
+                lblTongTien.Text = "0 VND";
                 cleartxt();
             }
         }
@@ -263,8 +264,8 @@ namespace Nhom6_QuanLyTiemBanh
                                 if (cbbSP.SelectedValue.ToString().Equals(row.Cells[0].Value.ToString()))
                                 {
                                     row.Cells[2].Value = txtSL.Text;
-                                    row.Cells[3].Value = txtDG.Text;
-                                    row.Cells[4].Value = double.Parse(txtThanhTien.Text) / 1000;
+                                    row.Cells[3].Value = txtDG.Text +"000";
+                                    row.Cells[4].Value = txtThanhTien.Text;
                                     tinhtong();
                                     cleartxt();
                                     index = -1;

@@ -85,7 +85,6 @@
     <Compile Include="DBProccessing\DBProccessingHoaDonNhap.cs" />
     <Compile Include="DBProccessing\DBProccessingKhachHang.cs" />
     <Compile Include="DBProccessing\DBProccessingNhaCungCap.cs" />
-    <Compile Include="DBProccessing\DBProccessingNhanVien.cs" />
     <Compile Include="DBProccessing\DBProccessingSanPham.cs" />
     <Compile Include="DBProccessing\DBProccessingTaiKhoan.cs" />
     <Compile Include="HoaDonBan.cs">
